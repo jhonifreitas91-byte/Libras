@@ -349,53 +349,192 @@
       font-size: 16px;
     }
 
-    /* =========================
-       O QUE VOCÊ RECEBE
-    ========================= */
+    /* ==========================================
+   O QUE VOCÊ VAI RECEBER
+========================================== */
 
-    .content-section {
-      background: #ffffff;
-    }
+.content-section {
+  background: #ffffff;
+}
 
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
 
-    .category {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 27px 25px;
-      background: #ffffff;
-      transition: 0.25s ease;
-    }
+/* TÍTULO */
 
-    .category:hover {
-      border-color: #d7e1f5;
-      box-shadow: 0 12px 35px rgba(20, 35, 70, 0.06);
-      transform: translateY(-2px);
-    }
+.content-section .section-header {
+  margin-bottom: 42px;
+}
 
-    .category-number {
-      color: #9aa4b5;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
 
-    .category h3 {
-      font-size: 17px;
-      color: var(--text);
-      margin-bottom: 7px;
-    }
+/* GRID */
 
-    .category p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
+.categories {
+  display: grid;
 
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 14px;
+
+  max-width: 1050px;
+
+  margin: 0 auto;
+}
+
+
+/* CARD */
+
+.category {
+
+  min-height: 76px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe5ee;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 3px 12px rgba(25, 50, 90, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+
+/* HOVER */
+
+.category:hover {
+
+  transform: translateY(-2px);
+
+  border-color: #c8d9f4;
+
+  box-shadow:
+    0 10px 25px rgba(25, 50, 90, 0.08);
+
+}
+
+
+/* ÍCONE */
+
+.category-icon {
+
+  width: 43px;
+
+  height: 43px;
+
+  min-width: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf4ff;
+
+  color: #3b75c9;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+}
+
+
+/* TEXTO */
+
+.category span {
+
+  color: #43516a;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.3;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 850px) {
+
+  .categories {
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+  }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 560px) {
+
+  .content-section .section-header {
+
+    margin-bottom: 30px;
+
+  }
+
+  .categories {
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+  }
+
+  .category {
+
+    min-height: 70px;
+
+    padding: 12px 15px;
+
+    border-radius: 14px;
+
+  }
+
+  .category-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    font-size: 15px;
+
+  }
+
+  .category span {
+
+    font-size: 13px;
+
+  }
+
+}
     /* =========================
        CARROSSEL
     ========================= */
@@ -1532,183 +1671,114 @@
 
 
     <!-- =========================
-         O QUE VOCÊ VAI RECEBER
-    ========================== -->
+     O QUE VOCÊ VAI RECEBER
+========================= -->
 
-    <section class="content-section" id="conteudo">
+<section class="content-section" id="conteudo">
 
-      <div class="container">
+  <div class="container">
 
-        <div class="section-header">
+    <div class="section-header">
+      <h2>O QUE VOCÊ VAI RECEBER</h2>
+    </div>
 
-          <h2>
-            O QUE VOCÊ VAI RECEBER
-          </h2>
+    <div class="categories">
 
-        </div>
-
-
-        <div class="categories">
-
-
-          <div class="category">
-
-            <div class="category-number">
-              01
-            </div>
-
-            <h3>
-              Alfabeto
-            </h3>
-
-            <p>
-              Conheça os sinais utilizados no alfabeto manual.
-            </p>
-
-          </div>
-
-
-          <div class="category">
-
-            <div class="category-number">
-              02
-            </div>
-
-            <h3>
-              Cores
-            </h3>
-
-            <p>
-              Aprenda sinais relacionados às principais cores.
-            </p>
-
-          </div>
-
-
-          <div class="category">
-
-            <div class="category-number">
-              03
-            </div>
-
-            <h3>
-              Família
-            </h3>
-
-            <p>
-              Vocabulário visual relacionado à família.
-            </p>
-
-          </div>
-
-
-          <div class="category">
-
-            <div class="category-number">
-              04
-            </div>
-
-            <h3>
-              Alimentos
-            </h3>
-
-            <p>
-              Sinais relacionados a alimentos e situações do cotidiano.
-            </p>
-
-          </div>
-
-
-          <div class="category">
-
-            <div class="category-number">
-              05
-            </div>
-
-            <h3>
-              Animais
-            </h3>
-
-            <p>
-              Aprenda sinais relacionados a animais, aves e insetos.
-            </p>
-
-          </div>
-
-
-          <div class="category">
-
-            <div class="category-number">
-              06
-            </div>
-
-            <h3>
-              Sentimentos
-            </h3>
-
-            <p>
-              Vocabulário visual relacionado a sentimentos e emoções.
-            </p>
-
-          </div>
-
-
-          <div class="category">
-
-            <div class="category-number">
-              07
-            </div>
-
-            <h3>
-              Tempo
-            </h3>
-
-            <p>
-              Sinais relacionados ao tempo e situações temporais.
-            </p>
-
-          </div>
-
-
-          <div class="category">
-
-            <div class="category-number">
-              08
-            </div>
-
-            <h3>
-              Formas e posições
-            </h3>
-
-            <p>
-              Formas, posições, tamanhos e lateralidade.
-            </p>
-
-          </div>
-
-
-          <div class="category">
-
-            <div class="category-number">
-              09
-            </div>
-
-            <h3>
-              Dia a dia
-            </h3>
-
-            <p>
-              Palavras e situações úteis para começar a praticar.
-            </p>
-
-          </div>
-
-
-        </div>
-
+      <div class="category">
+        <div class="category-icon">Aa</div>
+        <span>Alfabeto</span>
       </div>
 
-    </section>
+      <div class="category">
+        <div class="category-icon">◉</div>
+        <span>Cores</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">▣</div>
+        <span>Identificação pessoal</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">♧</div>
+        <span>Família</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">◷</div>
+        <span>Tempo</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">△</div>
+        <span>Formas</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">↔</div>
+        <span>Lateralidade</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">▱</div>
+        <span>Posição e tamanhos</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">☼</div>
+        <span>Estados do tempo</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">☺</div>
+        <span>Atitudes e sentimentos</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">♜</div>
+        <span>Alimentos</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">♨</div>
+        <span>Alimentos salgados</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">♨</div>
+        <span>Alimentos doces</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">♧</div>
+        <span>Animais</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">♢</div>
+        <span>Aves</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">✿</div>
+        <span>Insetos</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">▢</div>
+        <span>Vocabulário do dia a dia</span>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">✦</div>
+        <span>Expressões e situações cotidianas</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
     <!-- =========================
