@@ -861,6 +861,245 @@
 
     }
 
+/* =========================
+   NOVO CARD DE OFERTA
+========================= */
+
+.offer-card {
+  width: min(650px, 100%);
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #e1e5ec;
+  border-radius: 22px;
+  padding: 48px;
+  text-align: center;
+  box-shadow: 0 25px 70px rgba(20, 35, 70, 0.10);
+}
+
+
+/* TÍTULO */
+
+.offer-label {
+  display: inline-block;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  margin-bottom: 14px;
+}
+
+.offer-card h2 {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: var(--text);
+}
+
+.offer-subtitle {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* =========================
+   INCLUSO
+========================= */
+
+.offer-includes {
+  margin-top: 30px;
+  padding: 24px;
+  background: #f8f9fb;
+  border: 1px solid #edf0f4;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.includes-title {
+  font-size: 14px;
+  font-weight: 750;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.include-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+  color: #5e6879;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.include-check {
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #edf4ff;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   PREÇO
+========================= */
+
+.offer-price-area {
+  margin-top: 30px;
+}
+
+.old-price {
+  color: #9099a8;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.price-label {
+  margin-top: 3px;
+  color: #596477;
+  font-size: 13px;
+}
+
+.price {
+  margin-top: -3px;
+  color: var(--blue);
+  font-size: 60px;
+  line-height: 1.05;
+  font-weight: 850;
+  letter-spacing: -2.5px;
+}
+
+.price small {
+  font-size: 21px;
+  vertical-align: top;
+  position: relative;
+  top: 11px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.offer-button {
+  width: 100%;
+  margin-top: 27px;
+}
+
+
+/* =========================
+   GARANTIA + ACESSO
+========================= */
+
+.offer-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.offer-benefit {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-align: left;
+  padding: 15px;
+  border: 1px solid #e8ebf0;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.benefit-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.benefit-icon.seal {
+  color: var(--blue);
+  background: #eef4ff;
+  border: 1px solid #dce8ff;
+}
+
+.benefit-icon.download {
+  color: var(--blue);
+  background: #eef4ff;
+  border: 1px solid #dce8ff;
+  font-size: 20px;
+}
+
+.offer-benefit strong {
+  display: block;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.offer-benefit span {
+  display: block;
+  color: #8a94a4;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+
+/* =========================
+   SEGURANÇA
+========================= */
+
+.secure-message {
+  margin-top: 19px;
+  color: #929baa;
+  font-size: 11px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .offer-card {
+    padding: 34px 20px;
+    border-radius: 18px;
+  }
+
+  .offer-card h2 {
+    font-size: 26px;
+  }
+
+  .offer-includes {
+    padding: 20px 17px;
+  }
+
+  .price {
+    font-size: 54px;
+  }
+
+  .offer-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-benefit {
+    padding: 13px;
+  }
+
+}
+    
   </style>
 </head>
 
