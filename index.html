@@ -1783,93 +1783,86 @@
 
 
     <!-- =========================
-         CARROSSEL
-    ========================== -->
+     CARROSSEL
+========================= -->
 
-    <section class="preview-section" id="preview">
+<section class="preview-section" id="preview">
 
-      <div class="container">
+  <div class="container">
 
-        <div class="section-header">
+    <div class="section-header">
 
-          <h2>
-            Veja um pouco do material
-          </h2>
+      <h2>
+        Veja um pouco do material
+      </h2>
 
-          <p>
-            Conheça visualmente algumas páginas e categorias do guia.
-          </p>
+      <p>
+        Conheça visualmente algumas páginas e categorias do guia.
+      </p>
 
+    </div>
+
+
+    <div class="carousel">
+
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="slide">
+          <img 
+            src="carrossel1.jpeg" 
+            alt="Página do material de Libras - Alfabeto">
         </div>
 
+        <div class="slide">
+          <img 
+            src="carrossel2.jpeg" 
+            alt="Página do material de Libras - Cores">
+        </div>
 
-        <div class="carousel">
+        <div class="slide">
+          <img 
+            src="carrossel3.jpeg" 
+            alt="Página do material de Libras - Família">
+        </div>
 
-          <div class="carousel-track" id="carouselTrack">
+        <div class="slide">
+          <img 
+            src="carrossel4.jpeg" 
+            alt="Página do material de Libras - Alimentos">
+        </div>
+
+        <div class="slide">
+          <img 
+            src="carrossel5.jpeg" 
+            alt="Página do material de Libras - Sentimentos">
+        </div>
+
+      </div>
 
 
-          <!-- CARROSSEL -->
+      <div class="carousel-controls">
 
-<div class="carousel">
+        <button
+          class="carousel-button"
+          onclick="moveCarousel(-1)"
+          aria-label="Anterior">
+          ←
+        </button>
 
-  <div class="carousel-track">
+        <button
+          class="carousel-button"
+          onclick="moveCarousel(1)"
+          aria-label="Próximo">
+          →
+        </button>
 
-    <div class="slide">
-      <img 
-        src="carrossel1.jpeg" 
-        alt="Página do material de Libras - Alfabeto">
-      <div class="slide-label">ALFABETO</div>
-    </div>
+      </div>
 
-    <div class="slide">
-      <img 
-        src="carrossel2.jpeg" 
-        alt="Página do material de Libras - Cores">
-      <div class="slide-label">CORES</div>
-    </div>
-
-    <div class="slide">
-      <img 
-        src="carrossel3.jpeg" 
-        alt="Página do material de Libras - Família">
-      <div class="slide-label">FAMÍLIA</div>
-    </div>
-
-    <div class="slide">
-      <img 
-        src="carrossel4.jpeg" 
-        alt="Página do material de Libras - Alimentos">
-      <div class="slide-label">ALIMENTOS</div>
-    </div>
-
-    <div class="slide">
-      <img 
-        src="carrossel5.jpeg" 
-        alt="Página do material de Libras - Sentimentos">
-      <div class="slide-label">SENTIMENTOS</div>
     </div>
 
   </div>
 
-  <div class="carousel-controls">
-
-    <button
-      class="carousel-button"
-      onclick="moveCarousel(-1)"
-      aria-label="Anterior">
-      ←
-    </button>
-
-    <button
-      class="carousel-button"
-      onclick="moveCarousel(1)"
-      aria-label="Próximo">
-      →
-    </button>
-
-  </div>
-
-</div>
+</section>
 
 
     <!-- =========================
@@ -2111,7 +2104,6 @@
 </section>
 
 
-</div>
 
     <!-- =========================
          FAQ
