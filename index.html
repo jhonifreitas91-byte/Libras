@@ -861,241 +861,484 @@
 
     }
 
-/* =========================
-   NOVO CARD DE OFERTA
-========================= */
+/* ==========================================
+   OFERTA — CARD ROBUSTO E MARCADO
+========================================== */
 
-.offer-card {
-  width: min(650px, 100%);
-  margin: 0 auto;
-  background: #ffffff;
-  border: 1px solid #e1e5ec;
-  border-radius: 22px;
-  padding: 48px;
-  text-align: center;
-  box-shadow: 0 25px 70px rgba(20, 35, 70, 0.10);
+.oferta-section {
+  padding: 100px 20px;
+  background: #f4f7fb;
 }
 
 
-/* TÍTULO */
+/* ==========================================
+   CARD PRINCIPAL
+========================================== */
 
-.offer-label {
+.oferta-card {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3ee;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 50px rgba(20, 40, 80, 0.10);
+}
+
+
+/* ==========================================
+   CABEÇALHO AZUL
+========================================== */
+
+.oferta-header {
+  padding: 38px 45px 34px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf6ff 0%,
+      #e6f1ff 50%,
+      #eef7ff 100%
+    );
+
+  border-bottom: 1px solid #dce7f5;
+}
+
+
+.oferta-mini {
   display: inline-block;
-  color: var(--blue);
+
+  margin-bottom: 10px;
+
+  color: #2457c5;
+
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 1.6px;
-  margin-bottom: 14px;
+
+  letter-spacing: 1.8px;
 }
 
-.offer-card h2 {
+
+.oferta-header h2 {
+  margin: 0;
+
+  color: #172033;
+
   font-size: 30px;
   line-height: 1.2;
+
+  font-weight: 800;
+
   letter-spacing: -0.8px;
-  color: var(--text);
 }
 
-.offer-subtitle {
-  margin-top: 7px;
-  color: var(--muted);
+
+.oferta-header p {
+  margin: 9px auto 0;
+
+  max-width: 540px;
+
+  color: #687386;
+
   font-size: 14px;
+  line-height: 1.6;
 }
 
 
-/* =========================
-   INCLUSO
-========================= */
+/* ==========================================
+   CORPO
+========================================== */
 
-.offer-includes {
-  margin-top: 30px;
-  padding: 24px;
-  background: #f8f9fb;
-  border: 1px solid #edf0f4;
-  border-radius: 14px;
-  text-align: left;
+.oferta-body {
+  padding: 38px 45px 40px;
 }
 
-.includes-title {
-  font-size: 14px;
-  font-weight: 750;
-  color: var(--text);
-  margin-bottom: 16px;
-}
 
-.include-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top: 10px;
-  color: #5e6879;
-  font-size: 13px;
-  line-height: 1.5;
-}
+/* ==========================================
+   TÍTULO DO CONTEÚDO
+========================================== */
 
-.include-check {
-  flex-shrink: 0;
-  width: 19px;
-  height: 19px;
-  border-radius: 50%;
-  background: #edf4ff;
-  color: var(--blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
+.oferta-incluso h3 {
+  margin: 0 0 22px;
+
+  color: #172033;
+
+  font-size: 17px;
   font-weight: 800;
 }
 
 
-/* =========================
-   PREÇO
-========================= */
+/* ==========================================
+   LISTA
+========================================== */
 
-.offer-price-area {
-  margin-top: 30px;
-}
-
-.old-price {
-  color: #9099a8;
-  font-size: 14px;
-  text-decoration: line-through;
-}
-
-.price-label {
-  margin-top: 3px;
-  color: #596477;
-  font-size: 13px;
-}
-
-.price {
-  margin-top: -3px;
-  color: var(--blue);
-  font-size: 60px;
-  line-height: 1.05;
-  font-weight: 850;
-  letter-spacing: -2.5px;
-}
-
-.price small {
-  font-size: 21px;
-  vertical-align: top;
-  position: relative;
-  top: 11px;
-}
-
-
-/* =========================
-   BOTÃO
-========================= */
-
-.offer-button {
-  width: 100%;
-  margin-top: 27px;
-}
-
-
-/* =========================
-   GARANTIA + ACESSO
-========================= */
-
-.offer-benefits {
+.lista-oferta {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 18px;
+
+  column-gap: 55px;
+  row-gap: 14px;
+
+  padding-bottom: 32px;
+
+  border-bottom: 1px solid #e8ecf2;
 }
 
-.offer-benefit {
+
+.item-oferta {
   display: flex;
   align-items: center;
+
   gap: 11px;
-  text-align: left;
-  padding: 15px;
-  border: 1px solid #e8ebf0;
-  border-radius: 12px;
-  background: #ffffff;
 }
 
-.benefit-icon {
+
+.item-oferta span {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+
+  width: 22px;
+  height: 22px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
-}
 
-.benefit-icon.seal {
-  color: var(--blue);
-  background: #eef4ff;
-  border: 1px solid #dce8ff;
-}
+  border-radius: 50%;
 
-.benefit-icon.download {
-  color: var(--blue);
-  background: #eef4ff;
-  border: 1px solid #dce8ff;
-  font-size: 20px;
-}
+  background: #edf4ff;
 
-.offer-benefit strong {
-  display: block;
-  color: var(--text);
+  color: #2457c5;
+
   font-size: 12px;
+  font-weight: 800;
+}
+
+
+.item-oferta p {
+  margin: 0;
+
+  color: #4f5b6e;
+
+  font-size: 13px;
   line-height: 1.4;
 }
 
-.offer-benefit span {
+
+/* ==========================================
+   PREÇO
+========================================== */
+
+.oferta-preco {
+  text-align: center;
+
+  padding: 30px 0 8px;
+}
+
+
+.preco-antigo {
+  color: #7e8796;
+
+  font-size: 14px;
+
+  margin-bottom: 2px;
+}
+
+
+.preco-antigo span {
+  text-decoration: line-through;
+}
+
+
+.preco-legenda {
+  color: #596477;
+
+  font-size: 13px;
+}
+
+
+.preco-atual {
+  margin-top: -4px;
+
+  color: #2457c5;
+
+  font-size: 64px;
+
+  font-weight: 850;
+
+  line-height: 1.05;
+
+  letter-spacing: -3px;
+}
+
+
+.preco-atual small {
+  font-size: 25px;
+
+  vertical-align: top;
+
+  position: relative;
+
+  top: 13px;
+
+  letter-spacing: -1px;
+}
+
+
+/* ==========================================
+   BOTÃO
+========================================== */
+
+.botao-oferta {
+  width: 100%;
+
+  min-height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #2457c5;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 12px 25px rgba(36, 87, 197, 0.20);
+
+  transition: all 0.25s ease;
+}
+
+
+.botao-oferta:hover {
+  background: #173f94;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 30px rgba(36, 87, 197, 0.28);
+}
+
+
+/* ==========================================
+   GARANTIA / ACESSO
+========================================== */
+
+.garantias-oferta {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+
+  margin-top: 18px;
+}
+
+
+.garantia-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 16px;
+
+  border: 1px solid #e2e7ef;
+
+  border-radius: 9px;
+
+  background: #fafbfd;
+}
+
+
+.garantia-icone {
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf4ff;
+
+  border: 1px solid #d8e6ff;
+
+  color: #2457c5;
+
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+
+.garantia-icone.download {
+  font-size: 23px;
+}
+
+
+.garantia-item strong {
+
   display: block;
-  color: #8a94a4;
-  font-size: 11px;
+
+  color: #172033;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+.garantia-item span {
+
+  display: block;
+
   margin-top: 2px;
+
+  color: #8993a3;
+
+  font-size: 10px;
+
+  line-height: 1.4;
 }
 
 
-/* =========================
+/* ==========================================
    SEGURANÇA
-========================= */
+========================================== */
 
-.secure-message {
-  margin-top: 19px;
-  color: #929baa;
+.seguranca-oferta {
+
+  margin-top: 20px;
+
+  text-align: center;
+
+  color: #9aa2af;
+
   font-size: 11px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ==========================================
+   TABLET
+========================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-  .offer-card {
-    padding: 34px 20px;
-    border-radius: 18px;
+  .oferta-section {
+    padding: 70px 15px;
   }
 
-  .offer-card h2 {
-    font-size: 26px;
+
+  .oferta-header {
+    padding: 32px 25px;
   }
 
-  .offer-includes {
-    padding: 20px 17px;
+
+  .oferta-body {
+    padding: 30px 25px 32px;
   }
 
-  .price {
-    font-size: 54px;
+
+  .lista-oferta {
+    column-gap: 25px;
   }
 
-  .offer-benefits {
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 560px) {
+
+  .oferta-section {
+    padding: 55px 12px;
+  }
+
+
+  .oferta-card {
+    border-radius: 10px;
+  }
+
+
+  .oferta-header {
+    padding: 30px 20px;
+  }
+
+
+  .oferta-header h2 {
+    font-size: 25px;
+  }
+
+
+  .oferta-header p {
+    font-size: 13px;
+  }
+
+
+  .oferta-body {
+    padding: 27px 18px 28px;
+  }
+
+
+  .lista-oferta {
+
     grid-template-columns: 1fr;
+
+    row-gap: 12px;
+
+    padding-bottom: 25px;
   }
 
-  .offer-benefit {
-    padding: 13px;
+
+  .item-oferta p {
+    font-size: 13px;
+  }
+
+
+  .preco-atual {
+    font-size: 55px;
+  }
+
+
+  .botao-oferta {
+    min-height: 58px;
+
+    font-size: 13px;
+  }
+
+
+  .garantias-oferta {
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
   }
 
 }
@@ -1608,127 +1851,170 @@
     </section>
 
 
-    <div class="offer-card">
+   <!-- =========================
+     CARD DE OFERTA
+========================= -->
 
-  <div class="offer-label">
-    OFERTA ESPECIAL
-  </div>
+<section class="oferta-section" id="oferta">
 
-  <h2>
-    Libras na Prática
-  </h2>
+  <div class="oferta-card">
 
-  <p class="offer-subtitle">
-    Guia Visual de Libras para Iniciantes
-  </p>
+    <!-- CABEÇALHO -->
 
+    <div class="oferta-header">
 
-  <!-- O QUE ESTÁ INCLUSO -->
-
-  <div class="offer-includes">
-
-    <div class="includes-title">
-      O que você vai receber:
-    </div>
-
-    <div class="include-item">
-      <span class="include-check">✓</span>
-      <span>Alfabeto em Libras</span>
-    </div>
-
-    <div class="include-item">
-      <span class="include-check">✓</span>
-      <span>Cores e formas</span>
-    </div>
-
-    <div class="include-item">
-      <span class="include-check">✓</span>
-      <span>Família e identificação</span>
-    </div>
-
-    <div class="include-item">
-      <span class="include-check">✓</span>
-      <span>Alimentos e bebidas</span>
-    </div>
-
-    <div class="include-item">
-      <span class="include-check">✓</span>
-      <span>Animais, aves e insetos</span>
-    </div>
-
-    <div class="include-item">
-      <span class="include-check">✓</span>
-      <span>Sentimentos e emoções</span>
-    </div>
-
-    <div class="include-item">
-      <span class="include-check">✓</span>
-      <span>Tempo, posições e situações do dia a dia</span>
-    </div>
-
-  </div>
-
-
-  <!-- PREÇO -->
-
-  <div class="offer-price-area">
-
-    <div class="old-price">
-      De R$ 40,00
-    </div>
-
-    <div class="price-label">
-      Por apenas
-    </div>
-
-    <div class="price">
-      <small>R$</small>10,00
-    </div>
-
-  </div>
-
-
-  <!-- BOTÃO -->
-
-  <a
-    href="#"
-    class="primary-button offer-button">
-    QUERO ACESSAR AGORA
-  </a>
-
-
-  <!-- GARANTIA / ACESSO -->
-
-  <div class="offer-benefits">
-
-    <div class="offer-benefit">
-
-      <div class="benefit-icon seal">
-        ✓
+      <div class="oferta-mini">
+        LIBRAS NA PRÁTICA
       </div>
 
-      <div>
-        <strong>Garantia de 7 dias</strong>
-        <span>Compra protegida</span>
-      </div>
+      <h2>
+        Guia Visual de Libras
+      </h2>
+
+      <p>
+        Tudo o que você precisa para dar os primeiros passos em Libras.
+      </p>
 
     </div>
 
 
-    <div class="offer-benefit">
+    <!-- CONTEÚDO -->
 
-      <div class="benefit-icon download">
-        ↓
+    <div class="oferta-body">
+
+      <div class="oferta-incluso">
+
+        <h3>
+          O que você vai receber
+        </h3>
+
+
+        <div class="lista-oferta">
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Guia visual de Libras</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Alfabeto</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Cores</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Identificação pessoal</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Família</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Alimentos</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Animais, aves e insetos</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Sentimentos e atitudes</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Vocabulário do dia a dia</p>
+          </div>
+
+          <div class="item-oferta">
+            <span>✓</span>
+            <p>Diversas outras categorias</p>
+          </div>
+
+        </div>
+
       </div>
 
-      <div>
-        <strong>Acesso imediato</strong>
-        <span>Receba após a compra</span>
+
+      <!-- PREÇO -->
+
+      <div class="oferta-preco">
+
+        <div class="preco-antigo">
+          De <span>R$ 40,00</span>
+        </div>
+
+        <div class="preco-legenda">
+          Por apenas
+        </div>
+
+        <div class="preco-atual">
+          <small>R$</small> 10,00
+        </div>
+
+      </div>
+
+
+      <!-- CTA -->
+
+      <a href="#" class="botao-oferta">
+        QUERO MEU GUIA DE LIBRAS
+      </a>
+
+
+      <!-- BENEFÍCIOS -->
+
+      <div class="garantias-oferta">
+
+        <div class="garantia-item">
+
+          <div class="garantia-icone">
+            ✓
+          </div>
+
+          <div>
+            <strong>Garantia de 7 dias</strong>
+            <span>Você compra com segurança</span>
+          </div>
+
+        </div>
+
+
+        <div class="garantia-item">
+
+          <div class="garantia-icone download">
+            ↓
+          </div>
+
+          <div>
+            <strong>Acesso imediato</strong>
+            <span>Receba seu material após a compra</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="seguranca-oferta">
+        🔒 Pagamento seguro • Acesso digital
       </div>
 
     </div>
 
   </div>
+
+</section>
 
 
   <div class="secure-message">
