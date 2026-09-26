@@ -1342,6 +1342,58 @@
   }
 
 }
+
+/* ==========================================
+   VÍDEO DO PRODUTO
+========================================== */
+
+.video-produto {
+  width: 100%;
+  max-width: 850px;
+
+  margin: 42px auto 0;
+
+  background: #111827;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  border: 1px solid #dfe4ec;
+
+  box-shadow:
+    0 22px 55px rgba(20, 35, 70, 0.12);
+
+  aspect-ratio: 16 / 9;
+}
+
+
+.video-produto video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  background: #111827;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  .video-produto {
+    margin-top: 30px;
+
+    border-radius: 10px;
+
+    aspect-ratio: 16 / 9;
+  }
+
+}
+
     
   </style>
 </head>
@@ -1390,96 +1442,93 @@
 
     <section class="hero">
 
-      <div class="container">
+  <div class="container">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-          <div class="eyebrow">
-            Guia Visual de Libras para Iniciantes
+      <div class="eyebrow">
+        GUIA VISUAL DE LIBRAS PARA INICIANTES
+      </div>
+
+      <h1>
+        Aprenda os primeiros sinais de
+        <span>Libras</span>
+        de forma simples, visual e prática.
+      </h1>
+
+      <p class="hero-description">
+        Um guia visual para quem quer começar a aprender Libras
+        e conhecer sinais usados em situações do dia a dia.
+      </p>
+
+
+      <!-- VÍDEO -->
+
+      <div class="video-produto">
+
+        <video
+          controls
+          playsinline
+          preload="metadata">
+
+          <source
+            src="/video-libras.mp4"
+            type="video/mp4">
+
+          Seu navegador não suporta a reprodução de vídeo.
+
+        </video>
+
+      </div>
+
+
+      <!-- BOTÃO -->
+
+      <div class="hero-cta">
+
+        <a href="#oferta" class="primary-button">
+          QUERO COMEÇAR A APRENDER LIBRAS
+        </a>
+
+      </div>
+
+
+      <!-- GARANTIA E ACESSO -->
+
+      <div class="trust-row">
+
+        <div class="trust-item">
+
+          <div class="trust-seal">
+            ✓
           </div>
 
-          <h1>
-            Aprenda os primeiros sinais de
-            <span>Libras</span>
-            de forma simples, visual e prática.
-          </h1>
+          <span>
+            Garantia de 7 dias
+          </span>
 
-          <p class="hero-description">
-            Um guia visual para quem quer começar a aprender Libras
-            e conhecer sinais usados em situações do dia a dia.
-          </p>
+        </div>
 
 
-          <!-- VÍDEO -->
+        <div class="trust-item">
 
-          <div class="video-wrapper">
+          <span class="download-icon">
+            ↓
+          </span>
 
-            <div class="video-box">
-
-              <div class="video-placeholder">
-
-                <div class="play-button">
-                  ▶
-                </div>
-
-                <p>
-                  Seu vídeo apresentando o material aparecerá aqui
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- CTA -->
-
-          <div class="hero-cta">
-
-            <a href="#oferta" class="primary-button">
-              QUERO COMEÇAR A APRENDER LIBRAS
-            </a>
-
-          </div>
-
-
-          <!-- GARANTIA / ACESSO -->
-
-          <div class="trust-row">
-
-            <div class="trust-item">
-
-              <div class="trust-seal">
-                ✓
-              </div>
-
-              <span>
-                Garantia de 7 dias
-              </span>
-
-            </div>
-
-
-            <div class="trust-item">
-
-              <span class="download-icon">
-                ↓
-              </span>
-
-              <span>
-                Acesso imediato
-              </span>
-
-            </div>
-
-          </div>
+          <span>
+            Acesso imediato
+          </span>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </div>
+
+</section>
 
 
     <!-- =========================
