@@ -3,2284 +3,668 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="Libras na Prática — guia visual para começar a aprender Libras de forma simples, visual e prática.">
   <title>Libras na Prática | Guia Visual de Libras</title>
 
-  <meta name="description" content="Aprenda os primeiros sinais de Libras de forma simples, visual e prática.">
-
   <style>
-
-    /* =========================
-       RESET
-    ========================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      background: #ffffff;
-      color: #172033;
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    button,
-    a {
-      font-family: inherit;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* =========================
-       VARIÁVEIS
-    ========================= */
-
     :root {
-      --blue: #2457c5;
-      --blue-dark: #173f94;
-      --blue-light: #eef4ff;
-      --text: #172033;
-      --muted: #687386;
-      --border: #e8ebf0;
-      --background: #f8f9fb;
-      --white: #ffffff;
-      --shadow: 0 20px 60px rgba(20, 35, 70, 0.08);
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #64748b;
+      --line: #e5eaf1;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-soft: #eff6ff;
+      --navy: #0f172a;
+      --green: #16a34a;
+      --radius: 22px;
+      --shadow: 0 20px 60px rgba(15, 23, 42, .09);
     }
 
-    /* =========================
-       CONTAINER
-    ========================= */
-
-    .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
     }
+    a { color: inherit; text-decoration: none; }
+    img, video { max-width: 100%; display: block; }
 
-    /* =========================
-       OFERTA SUPERIOR
-    ========================= */
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
 
-    .top-offer {
-      width: 100%;
-      background: #172033;
-      color: #ffffff;
+    /* TOP BAR */
+    .topbar {
+      background: var(--navy);
+      color: #fff;
       text-align: center;
-      padding: 10px 20px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.2px;
+      padding: 9px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
-
+    /* NAV */
     header {
-      width: 100%;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid #f0f1f4;
-      position: relative;
-      z-index: 10;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226,232,240,.8);
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
-
     .nav {
-      height: 78px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
-
-    .logo {
-      font-size: 21px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--text);
-    }
-
-    .logo span {
-      color: var(--blue);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      font-size: 14px;
-      color: #596477;
-      font-weight: 500;
-    }
-
-    .nav-links a {
-      transition: 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      padding: 95px 0 90px;
-      text-align: center;
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(36, 87, 197, 0.055),
-          transparent 40%
-        );
-    }
-
-    .hero-content {
-      max-width: 850px;
-      margin: 0 auto;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 22px;
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 68px);
-      line-height: 1.05;
-      letter-spacing: -2.8px;
-      font-weight: 800;
-      color: var(--text);
-      max-width: 850px;
-      margin: 0 auto;
-    }
-
-    .hero h1 span {
-      color: var(--blue);
-    }
-
-    .hero-description {
-      max-width: 650px;
-      margin: 26px auto 0;
-      color: var(--muted);
+    .brand {
       font-size: 18px;
-      line-height: 1.7;
+      font-weight: 850;
+      letter-spacing: -.04em;
     }
-
-    /* =========================
-       VIDEO
-    ========================= */
-
-    .video-wrapper {
-      width: min(850px, 100%);
-      margin: 52px auto 0;
+    .brand span { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue);
+      color: #fff;
+      padding: 11px 17px;
+      border-radius: 11px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: .2s ease;
     }
+    .nav-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
 
-    .video-box {
+    /* HERO */
+    .hero {
       position: relative;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #101521;
-      border-radius: 20px;
       overflow: hidden;
-      box-shadow: var(--shadow);
-      display: flex;
+      padding: 76px 0 82px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(37,99,235,.10), transparent 28%),
+        radial-gradient(circle at 85% 25%, rgba(59,130,246,.08), transparent 25%),
+        linear-gradient(180deg, #fff 0%, #f7f9fc 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
       align-items: center;
-      justify-content: center;
+      gap: 58px;
     }
-
-    .video-placeholder {
-      color: #ffffff;
-      text-align: center;
-      padding: 30px;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      border: 1px solid #dbeafe;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 20px;
     }
-
-    .play-button {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      background: #ffffff;
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    h1 {
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+      max-width: 650px;
+    }
+    h1 em {
       color: var(--blue);
+      font-style: normal;
+    }
+    .hero-copy {
+      margin-top: 21px;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 560px;
+    }
+    .hero-actions {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 18px;
-      font-size: 24px;
-      padding-left: 4px;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 29px;
     }
-
-    .video-placeholder p {
-      font-size: 14px;
-      color: #cbd1dc;
-    }
-
-    /*
-      PARA COLOCAR SEU VÍDEO:
-
-      Substitua o conteúdo do .video-box por:
-
-      <video controls>
-        <source src="SEU-VIDEO.mp4" type="video/mp4">
-      </video>
-    */
-
-    .video-box video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .hero-cta {
-      margin-top: 38px;
-    }
-
-    .primary-button {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 58px;
-      padding: 0 34px;
-      border-radius: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 13px;
+      font-size: 13px;
+      font-weight: 850;
+      transition: .22s ease;
+    }
+    .btn-primary {
       background: var(--blue);
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 750;
-      letter-spacing: 0.2px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 12px 30px rgba(36, 87, 197, 0.22);
-      transition: 0.25s ease;
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(37,99,235,.23);
     }
-
-    .primary-button:hover {
-      background: var(--blue-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 16px 35px rgba(36, 87, 197, 0.28);
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); }
+    .btn-secondary {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--text);
     }
+    .btn-secondary:hover { border-color: #bfdbfe; transform: translateY(-1px); }
 
-    /* =========================
-       GARANTIA / ACESSO
-    ========================= */
-
-    .trust-row {
+    .trust {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 38px;
-      margin-top: 25px;
+      gap: 18px;
       flex-wrap: wrap;
+      margin-top: 20px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 650;
     }
+    .trust span { display: inline-flex; align-items: center; gap: 6px; }
 
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #667084;
-      font-size: 13px;
-      font-weight: 600;
+    .hero-media {
+      background: #0b1220;
+      border-radius: 26px;
+      padding: 8px;
+      box-shadow: 0 28px 70px rgba(15,23,42,.17);
+      transform: rotate(.35deg);
     }
-
-    .trust-seal {
-      width: 30px;
-      height: 30px;
-      border: 1px solid #d8e0ef;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 13px;
-      background: #f7f9fd;
-    }
-
-    .download-icon {
-      font-size: 18px;
-      color: var(--blue);
-    }
-
-    /* =========================
-       SEÇÕES
-    ========================= */
-
-    section {
-      padding: 100px 0;
-    }
-
-    .section-header {
-      max-width: 700px;
-      margin: 0 auto 55px;
-      text-align: center;
-    }
-
-    .section-header h2 {
-      font-size: clamp(30px, 4vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -1.3px;
-      color: var(--text);
-      font-weight: 800;
-    }
-
-    .section-header p {
-      margin-top: 15px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    /* ==========================================
-   O QUE VOCÊ VAI RECEBER
-========================================== */
-
-.content-section {
-  background: #ffffff;
-  padding: 90px 0;
-}
-
-.content-section .section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.content-section .section-header h2 {
-  font-size: 38px;
-  font-weight: 800;
-  color: #172033;
-  letter-spacing: -1px;
-}
-
-
-/* ==========================================
-   GRADE — 3 CARDS LADO A LADO
-========================================== */
-
-.categories {
-  width: 100%;
-  max-width: 1050px;
-  margin: 0 auto;
-
-  display: grid !important;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-
-  gap: 14px !important;
-}
-
-
-/* ==========================================
-   CARD
-========================================== */
-
-.categories .category {
-
-  width: 100% !important;
-
-  min-width: 0 !important;
-
-  min-height: 76px;
-
-  display: flex !important;
-
-  flex-direction: row !important;
-
-  align-items: center !important;
-
-  justify-content: flex-start !important;
-
-  gap: 14px;
-
-  padding: 14px 18px;
-
-  background: #ffffff;
-
-  border: 1px solid #dce3ed;
-
-  border-radius: 16px;
-
-  box-shadow: 0 3px 12px rgba(25, 50, 90, 0.04);
-
-  transition: all 0.2s ease;
-}
-
-
-/* HOVER */
-
-.categories .category:hover {
-  transform: translateY(-2px);
-
-  border-color: #c8d9f4;
-
-  box-shadow: 0 10px 25px rgba(25, 50, 90, 0.08);
-}
-
-
-/* ==========================================
-   ÍCONE
-========================================== */
-
-.categories .category-icon {
-
-  width: 43px !important;
-
-  height: 43px !important;
-
-  min-width: 43px !important;
-
-  flex-shrink: 0;
-
-  display: flex !important;
-
-  align-items: center !important;
-
-  justify-content: center !important;
-
-  border-radius: 50%;
-
-  background: #eaf4ff;
-
-  color: #3b75c9;
-
-  font-size: 16px;
-
-  font-weight: 700;
-}
-
-
-/* ==========================================
-   TEXTO
-========================================== */
-
-.categories .category span {
-
-  display: block;
-
-  margin: 0;
-
-  color: #43516a;
-
-  font-size: 14px;
-
-  font-weight: 500;
-
-  line-height: 1.3;
-
-  text-align: left;
-}
-
-
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width: 850px) {
-
-  .categories {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-}
-
-
-/* ==========================================
-   CELULAR
-========================================== */
-
-@media (max-width: 560px) {
-
-  .content-section {
-    padding: 65px 0;
-  }
-
-  .content-section .section-header h2 {
-    font-size: 30px;
-  }
-
-  .categories {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .categories .category {
-    min-height: 68px;
-    padding: 12px 15px;
-  }
-
-}
-    /* =========================
-       CARROSSEL
-    ========================= */
-
-    .preview-section {
-      background: var(--background);
-    }
-
-    .carousel {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      padding: 5px 2px 20px;
-    }
-
-    .carousel-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .slide {
-      flex: 0 0 330px;
-      height: 430px;
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 12px 35px rgba(20, 35, 70, 0.06);
-    }
-
-    .slide-placeholder {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
-      color: #8993a5;
-      background: #f5f6f8;
-      font-size: 14px;
-    }
-
-    .slide img {
+    .hero-media video {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 16/10;
       object-fit: cover;
+      border-radius: 19px;
+      background: #0b1220;
     }
 
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 28px;
+    /* SOCIAL PROOF / VALUE STRIP */
+    .strip { padding: 18px 0 0; }
+    .strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
     }
-
-    .carousel-button {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid #dfe3ea;
-      background: #ffffff;
-      color: var(--text);
-      cursor: pointer;
-      font-size: 18px;
-      transition: 0.2s;
+    .strip-card {
+      background: rgba(255,255,255,.9);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
     }
+    .strip-card strong { display: block; font-size: 14px; margin-bottom: 3px; }
+    .strip-card span { color: var(--muted); font-size: 12px; }
 
-    .carousel-button:hover {
-      border-color: var(--blue);
+    /* SECTIONS */
+    section { padding: 92px 0; }
+    .section-head {
+      max-width: 680px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+    .kicker {
       color: var(--blue);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
-
-    /* =========================
-       BENEFÍCIOS
-    ========================= */
-
-    .benefits-section {
-      background: #ffffff;
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
     }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 15px; }
 
-    .benefits {
+    /* CONTENT */
+    .content-section { background: #fff; }
+    .topics {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 12px;
     }
+    .topic {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 72px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 13px 15px;
+      transition: .2s ease;
+    }
+    .topic:hover { transform: translateY(-2px); border-color: #bfdbfe; box-shadow: 0 12px 28px rgba(15,23,42,.06); }
+    .topic-icon {
+      width: 42px; height: 42px; flex: 0 0 42px;
+      display: grid; place-items: center;
+      border-radius: 13px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 14px;
+    }
+    .topic span { font-size: 13px; font-weight: 650; color: #334155; }
 
+    /* PREVIEW */
+    .preview { background: var(--bg); }
+    .carousel {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding: 4px 2px 20px;
+    }
+    .carousel::-webkit-scrollbar { display:none; }
+    .slide {
+      flex: 0 0 280px;
+      height: 380px;
+      scroll-snap-align: start;
+      border-radius: 19px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 15px 35px rgba(15,23,42,.07);
+    }
+    .slide img { width:100%; height:100%; object-fit:cover; }
+
+    /* BENEFITS */
+    .benefits { background:#fff; }
+    .benefit-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
     .benefit {
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      padding:26px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(180deg,#fff,#fbfdff);
     }
-
-    .benefit h3 {
-      font-size: 17px;
-      margin-bottom: 9px;
+    .benefit-number {
+      width:34px;height:34px;display:grid;place-items:center;
+      border-radius:10px;background:var(--blue-soft);color:var(--blue);
+      font-weight:900;font-size:12px;margin-bottom:20px;
     }
+    .benefit h3 { font-size:17px; margin-bottom:8px; }
+    .benefit p { color:var(--muted); font-size:13px; line-height:1.7; }
 
-    .benefit p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    /* =========================
-       OFERTA
-    ========================= */
-
+    /* OFFER */
     .offer-section {
-      background: var(--background);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(37,99,235,.12), transparent 35%),
+        #f1f5f9;
     }
-
-    .offer-card {
-      width: min(620px, 100%);
-      margin: 0 auto;
-      background: #ffffff;
-      border: 1px solid #e1e5ec;
-      border-radius: 20px;
-      padding: 48px 45px;
-      text-align: center;
-      box-shadow: var(--shadow);
+    .offer {
+      max-width:760px;
+      margin:auto;
+      background:#fff;
+      border:1px solid #dce4ef;
+      border-radius:25px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
     }
-
-    .offer-label {
-      color: var(--blue);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 800;
-      margin-bottom: 13px;
+    .offer-top {
+      padding:34px 35px 30px;
+      text-align:center;
+      background:linear-gradient(135deg,#eff6ff,#f8fbff);
+      border-bottom:1px solid #dbeafe;
     }
-
-    .offer-card h2 {
-      font-size: 29px;
-      letter-spacing: -0.7px;
-      margin-bottom: 7px;
+    .offer-top .kicker { margin-bottom:7px; }
+    .offer-top h2 { font-size:31px; letter-spacing:-.04em; }
+    .offer-top p { color:var(--muted); font-size:14px; margin-top:8px; }
+    .offer-body { padding:34px; }
+    .included-title { font-size:15px; font-weight:850; margin-bottom:18px; }
+    .included {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:11px 24px;
+      padding-bottom:27px;
+      border-bottom:1px solid var(--line);
     }
-
-    .offer-subtitle {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 30px;
+    .included-item {
+      display:flex; gap:9px; align-items:flex-start;
+      color:#475569; font-size:13px;
     }
-
-    .old-price {
-      color: #8b94a4;
-      font-size: 15px;
-      text-decoration: line-through;
+    .check {
+      width:21px;height:21px;flex:0 0 21px;
+      display:grid;place-items:center;
+      border-radius:50%;background:#ecfdf3;color:var(--green);
+      font-size:11px;font-weight:900;
     }
-
-    .price-label {
-      margin-top: 3px;
-      color: #4e596b;
-      font-size: 14px;
-    }
-
+    .price-wrap { text-align:center; padding:27px 0 7px; }
+    .old { color:#94a3b8; font-size:13px; }
+    .old span { text-decoration:line-through; }
+    .from { color:#64748b; font-size:12px; margin-top:3px; }
     .price {
-      margin-top: -5px;
-      color: var(--blue);
-      font-size: 58px;
-      line-height: 1.1;
-      font-weight: 850;
-      letter-spacing: -2px;
+      color:var(--blue);
+      font-size:61px;
+      line-height:1;
+      letter-spacing:-.06em;
+      font-weight:900;
+      margin-top:2px;
     }
-
-    .price small {
-      font-size: 21px;
-      vertical-align: top;
-      position: relative;
-      top: 11px;
+    .price small { font-size:24px; vertical-align:top; position:relative; top:8px; letter-spacing:-.02em; }
+    .offer-btn { width:100%; min-height:60px; font-size:14px; }
+    .offer-meta {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:13px;
     }
-
-    .offer-button {
-      width: 100%;
-      margin-top: 30px;
+    .meta {
+      border:1px solid var(--line);
+      border-radius:13px;
+      padding:13px;
+      text-align:center;
     }
+    .meta strong { display:block; font-size:11px; }
+    .meta span { color:#94a3b8; font-size:10px; }
+    .secure { text-align:center; color:#94a3b8; font-size:10px; margin-top:17px; }
 
-    .offer-details {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      margin-top: 22px;
-      flex-wrap: wrap;
-      color: #737d8e;
-      font-size: 12px;
-    }
-
-    /* =========================
-       FAQ
-    ========================= */
-
-    .faq-section {
-      background: #ffffff;
-    }
-
-    .faq {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    details {
-      border-bottom: 1px solid var(--border);
-      padding: 21px 0;
-    }
-
-    details:first-child {
-      border-top: 1px solid var(--border);
-    }
-
+    /* FAQ */
+    .faq-wrap { max-width:760px; margin:auto; }
+    details { background:#fff; border-bottom:1px solid var(--line); padding:20px 0; }
+    details:first-child { border-top:1px solid var(--line); }
     summary {
-      cursor: pointer;
-      list-style: none;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text);
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
+      list-style:none; cursor:pointer; display:flex; justify-content:space-between;
+      gap:20px; font-weight:750; font-size:14px;
+    }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:"+"; color:var(--blue); font-size:20px; font-weight:400; }
+    details[open] summary::after { content:"−"; }
+    details p { color:var(--muted); font-size:13px; line-height:1.7; padding-top:11px; max-width:680px; }
+
+    /* FINAL CTA */
+    .final {
+      background:var(--navy);
+      color:#fff;
+      text-align:center;
+      padding:86px 20px;
+    }
+    .final h2 {
+      max-width:700px; margin:auto;
+      font-size:clamp(32px,5vw,50px);
+      line-height:1.06; letter-spacing:-.05em;
+    }
+    .final p { max-width:570px; margin:16px auto 27px; color:#94a3b8; font-size:15px; }
+    .final .btn-primary { background:#fff; color:var(--navy); box-shadow:none; }
+    .final .btn-primary:hover { background:#f8fafc; color:var(--blue); }
+
+    footer { background:#080f1d; color:#64748b; text-align:center; padding:24px; font-size:11px; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns:1fr; gap:38px; }
+      .hero-copy { max-width:680px; }
+      .hero-media { max-width:760px; margin:auto; width:100%; }
+      .topics { grid-template-columns:repeat(2,1fr); }
+      .benefit-grid { grid-template-columns:1fr; }
     }
 
-    summary::-webkit-details-marker {
-      display: none;
+    @media (max-width: 620px) {
+      .container { width:min(100% - 24px,1120px); }
+      .nav { height:62px; }
+      .brand { font-size:17px; }
+      .nav-cta { padding:10px 13px; font-size:11px; }
+      .hero { padding:55px 0 62px; }
+      h1 { font-size:40px; }
+      .hero-copy { font-size:15px; }
+      .hero-actions .btn { width:100%; }
+      .hero-media { border-radius:20px; padding:6px; transform:none; }
+      .strip-inner { grid-template-columns:1fr; }
+      section { padding:68px 0; }
+      .topics { grid-template-columns:1fr; }
+      .slide { flex-basis:82vw; height:105vw; max-height:470px; }
+      .offer-top { padding:29px 20px 26px; }
+      .offer-top h2 { font-size:26px; }
+      .offer-body { padding:25px 18px; }
+      .included { grid-template-columns:1fr; }
+      .price { font-size:54px; }
+      .offer-meta { grid-template-columns:1fr; }
+      .final { padding:68px 18px; }
     }
-
-    summary::after {
-      content: "+";
-      color: var(--blue);
-      font-size: 20px;
-      font-weight: 400;
-    }
-
-    details[open] summary::after {
-      content: "−";
-    }
-
-    details p {
-      padding-top: 13px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-      max-width: 680px;
-    }
-
-    /* =========================
-       CTA FINAL
-    ========================= */
-
-    .final-section {
-      background: #172033;
-      color: #ffffff;
-      text-align: center;
-      padding: 95px 20px;
-    }
-
-    .final-section h2 {
-      max-width: 650px;
-      margin: 0 auto;
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-    }
-
-    .final-section p {
-      max-width: 560px;
-      margin: 18px auto 30px;
-      color: #bfc6d3;
-      font-size: 16px;
-    }
-
-    .final-button {
-      background: #ffffff;
-      color: var(--text);
-      box-shadow: none;
-    }
-
-    .final-button:hover {
-      background: #f0f3f8;
-      color: var(--blue);
-      box-shadow: none;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #111827;
-      color: #7f8999;
-      text-align: center;
-      padding: 25px 20px;
-      font-size: 12px;
-    }
-
-    /* =========================
-       RESPONSIVO
-    ========================= */
-
-    @media (max-width: 850px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 70px 0 65px;
-      }
-
-      .hero h1 {
-        letter-spacing: -1.8px;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .categories {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .benefits {
-        grid-template-columns: 1fr;
-      }
-
-      .slide {
-        flex-basis: 290px;
-        height: 380px;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .container {
-        width: min(100% - 30px, 1120px);
-      }
-
-      .top-offer {
-        font-size: 12px;
-        padding: 9px 12px;
-      }
-
-      .nav {
-        height: 68px;
-      }
-
-      .logo {
-        font-size: 19px;
-      }
-
-      .hero {
-        padding: 58px 0 55px;
-      }
-
-      .eyebrow {
-        font-size: 11px;
-        letter-spacing: 1.1px;
-        margin-bottom: 17px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-        letter-spacing: -1.8px;
-      }
-
-      .hero-description {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-top: 20px;
-      }
-
-      .video-wrapper {
-        margin-top: 35px;
-      }
-
-      .video-box {
-        border-radius: 14px;
-      }
-
-      .play-button {
-        width: 56px;
-        height: 56px;
-        font-size: 20px;
-      }
-
-      .hero-cta {
-        margin-top: 28px;
-      }
-
-      .primary-button {
-        width: 100%;
-        padding: 0 20px;
-        font-size: 13px;
-      }
-
-      .trust-row {
-        gap: 18px;
-        margin-top: 20px;
-      }
-
-      .trust-item {
-        font-size: 12px;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .section-header {
-        margin-bottom: 35px;
-      }
-
-      .section-header h2 {
-        font-size: 30px;
-      }
-
-      .section-header p {
-        font-size: 14px;
-      }
-
-      .categories {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .category {
-        padding: 22px;
-      }
-
-      .slide {
-        flex-basis: 82vw;
-        height: 110vw;
-        max-height: 470px;
-      }
-
-      .offer-card {
-        padding: 35px 22px;
-        border-radius: 16px;
-      }
-
-      .offer-card h2 {
-        font-size: 25px;
-      }
-
-      .price {
-        font-size: 52px;
-      }
-
-      .offer-details {
-        gap: 14px;
-      }
-
-      .final-section {
-        padding: 70px 20px;
-      }
-
-      .final-section h2 {
-        font-size: 34px;
-      }
-
-    }
-
-/* ==========================================
-   OFERTA — CARD ROBUSTO E MARCADO
-========================================== */
-
-.oferta-section {
-  padding: 100px 20px;
-  background: #f4f7fb;
-}
-
-
-/* ==========================================
-   CARD PRINCIPAL
-========================================== */
-
-.oferta-card {
-  width: 100%;
-  max-width: 780px;
-  margin: 0 auto;
-
-  background: #ffffff;
-
-  border: 1px solid #dce3ee;
-  border-radius: 12px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 20px 50px rgba(20, 40, 80, 0.10);
-}
-
-
-/* ==========================================
-   CABEÇALHO AZUL
-========================================== */
-
-.oferta-header {
-  padding: 38px 45px 34px;
-
-  text-align: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      #edf6ff 0%,
-      #e6f1ff 50%,
-      #eef7ff 100%
-    );
-
-  border-bottom: 1px solid #dce7f5;
-}
-
-
-.oferta-mini {
-  display: inline-block;
-
-  margin-bottom: 10px;
-
-  color: #2457c5;
-
-  font-size: 11px;
-  font-weight: 800;
-
-  letter-spacing: 1.8px;
-}
-
-
-.oferta-header h2 {
-  margin: 0;
-
-  color: #172033;
-
-  font-size: 30px;
-  line-height: 1.2;
-
-  font-weight: 800;
-
-  letter-spacing: -0.8px;
-}
-
-
-.oferta-header p {
-  margin: 9px auto 0;
-
-  max-width: 540px;
-
-  color: #687386;
-
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-
-/* ==========================================
-   CORPO
-========================================== */
-
-.oferta-body {
-  padding: 38px 45px 40px;
-}
-
-
-/* ==========================================
-   TÍTULO DO CONTEÚDO
-========================================== */
-
-.oferta-incluso h3 {
-  margin: 0 0 22px;
-
-  color: #172033;
-
-  font-size: 17px;
-  font-weight: 800;
-}
-
-
-/* ==========================================
-   LISTA
-========================================== */
-
-.lista-oferta {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  column-gap: 55px;
-  row-gap: 14px;
-
-  padding-bottom: 32px;
-
-  border-bottom: 1px solid #e8ecf2;
-}
-
-
-.item-oferta {
-  display: flex;
-  align-items: center;
-
-  gap: 11px;
-}
-
-
-.item-oferta span {
-  flex-shrink: 0;
-
-  width: 22px;
-  height: 22px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #edf4ff;
-
-  color: #2457c5;
-
-  font-size: 12px;
-  font-weight: 800;
-}
-
-
-.item-oferta p {
-  margin: 0;
-
-  color: #4f5b6e;
-
-  font-size: 13px;
-  line-height: 1.4;
-}
-
-
-/* ==========================================
-   PREÇO
-========================================== */
-
-.oferta-preco {
-  text-align: center;
-
-  padding: 30px 0 8px;
-}
-
-
-.preco-antigo {
-  color: #7e8796;
-
-  font-size: 14px;
-
-  margin-bottom: 2px;
-}
-
-
-.preco-antigo span {
-  text-decoration: line-through;
-}
-
-
-.preco-legenda {
-  color: #596477;
-
-  font-size: 13px;
-}
-
-
-.preco-atual {
-  margin-top: -4px;
-
-  color: #2457c5;
-
-  font-size: 64px;
-
-  font-weight: 850;
-
-  line-height: 1.05;
-
-  letter-spacing: -3px;
-}
-
-
-.preco-atual small {
-  font-size: 25px;
-
-  vertical-align: top;
-
-  position: relative;
-
-  top: 13px;
-
-  letter-spacing: -1px;
-}
-
-
-/* ==========================================
-   BOTÃO
-========================================== */
-
-.botao-oferta {
-  width: 100%;
-
-  min-height: 62px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 9px;
-
-  background: #2457c5;
-
-  color: #ffffff;
-
-  font-size: 14px;
-  font-weight: 800;
-
-  letter-spacing: 0.3px;
-
-  text-decoration: none;
-
-  box-shadow:
-    0 12px 25px rgba(36, 87, 197, 0.20);
-
-  transition: all 0.25s ease;
-}
-
-
-.botao-oferta:hover {
-  background: #173f94;
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 16px 30px rgba(36, 87, 197, 0.28);
-}
-
-
-/* ==========================================
-   GARANTIA / ACESSO
-========================================== */
-
-.garantias-oferta {
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 14px;
-
-  margin-top: 18px;
-}
-
-
-.garantia-item {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 16px;
-
-  border: 1px solid #e2e7ef;
-
-  border-radius: 9px;
-
-  background: #fafbfd;
-}
-
-
-.garantia-icone {
-
-  width: 38px;
-  height: 38px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #edf4ff;
-
-  border: 1px solid #d8e6ff;
-
-  color: #2457c5;
-
-  font-size: 17px;
-
-  font-weight: 800;
-}
-
-
-.garantia-icone.download {
-  font-size: 23px;
-}
-
-
-.garantia-item strong {
-
-  display: block;
-
-  color: #172033;
-
-  font-size: 12px;
-
-  line-height: 1.4;
-}
-
-
-.garantia-item span {
-
-  display: block;
-
-  margin-top: 2px;
-
-  color: #8993a3;
-
-  font-size: 10px;
-
-  line-height: 1.4;
-}
-
-
-/* ==========================================
-   SEGURANÇA
-========================================== */
-
-.seguranca-oferta {
-
-  margin-top: 20px;
-
-  text-align: center;
-
-  color: #9aa2af;
-
-  font-size: 11px;
-}
-
-
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width: 700px) {
-
-  .oferta-section {
-    padding: 70px 15px;
-  }
-
-
-  .oferta-header {
-    padding: 32px 25px;
-  }
-
-
-  .oferta-body {
-    padding: 30px 25px 32px;
-  }
-
-
-  .lista-oferta {
-    column-gap: 25px;
-  }
-
-}
-
-
-/* ==========================================
-   CELULAR
-========================================== */
-
-@media (max-width: 560px) {
-
-  .oferta-section {
-    padding: 55px 12px;
-  }
-
-
-  .oferta-card {
-    border-radius: 10px;
-  }
-
-
-  .oferta-header {
-    padding: 30px 20px;
-  }
-
-
-  .oferta-header h2 {
-    font-size: 25px;
-  }
-
-
-  .oferta-header p {
-    font-size: 13px;
-  }
-
-
-  .oferta-body {
-    padding: 27px 18px 28px;
-  }
-
-
-  .lista-oferta {
-
-    grid-template-columns: 1fr;
-
-    row-gap: 12px;
-
-    padding-bottom: 25px;
-  }
-
-
-  .item-oferta p {
-    font-size: 13px;
-  }
-
-
-  .preco-atual {
-    font-size: 55px;
-  }
-
-
-  .botao-oferta {
-    min-height: 58px;
-
-    font-size: 13px;
-  }
-
-
-  .garantias-oferta {
-
-    grid-template-columns: 1fr;
-
-    gap: 10px;
-  }
-
-}
-
-/* ==========================================
-   VÍDEO DO PRODUTO
-========================================== */
-
-.video-produto {
-  width: 100%;
-  max-width: 850px;
-
-  margin: 42px auto 0;
-
-  background: #111827;
-
-  border-radius: 14px;
-
-  overflow: hidden;
-
-  border: 1px solid #dfe4ec;
-
-  box-shadow:
-    0 22px 55px rgba(20, 35, 70, 0.12);
-
-  aspect-ratio: 16 / 9;
-}
-
-
-.video-produto video {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  background: #111827;
-}
-
-
-/* CELULAR */
-
-@media (max-width: 600px) {
-
-  .video-produto {
-    margin-top: 30px;
-
-    border-radius: 10px;
-
-    aspect-ratio: 16 / 9;
-  }
-
-}
-
-    
   </style>
 </head>
 
-
 <body>
-
-
-  <!-- =========================
-       OFERTA SUPERIOR
-  ========================== -->
-
-  <div class="top-offer">
-    OFERTA VÁLIDA APENAS HOJE!
-  </div>
-
-
-  <!-- =========================
-       HEADER
-  ========================== -->
+  <div class="topbar">OFERTA ESPECIAL • ACESSO DIGITAL IMEDIATO</div>
 
   <header>
-
     <div class="container nav">
-
-      <div class="logo">
-        Libras<span> na Prática</span>
-      </div>
-
-      <nav class="nav-links">
-        <a href="#conteudo">O que você vai receber</a>
-        <a href="#preview">Conheça o material</a>
-        <a href="#faq">Dúvidas</a>
-      </nav>
-
+      <div class="brand">Libras<span> na Prática</span></div>
+      <a class="nav-cta" href="#oferta">QUERO O GUIA</a>
     </div>
-
   </header>
 
-
-  <!-- =========================
-       HERO
-  ========================== -->
-
   <main>
-
     <section class="hero">
-
-  <div class="container">
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-        GUIA VISUAL DE LIBRAS PARA INICIANTES
-      </div>
-
-      <h1>
-        Aprenda os primeiros sinais de
-        <span>Libras</span>
-        de forma simples, visual e prática.
-      </h1>
-
-      <p class="hero-description">
-        Um guia visual para quem quer começar a aprender Libras
-        e conhecer sinais usados em situações do dia a dia.
-      </p>
-
-
-      <!-- VÍDEO DO PRODUTO -->
-
-<div class="video-produto">
-
-  <video
-
-    id="videoProduto"
-
-    controls
-
-    playsinline
-
-    preload="metadata"
-
-    poster="thumb-libras.jpeg">
-
-    <source
-
-      src="video-libras.mp4"
-
-      type="video/mp4">
-
-    Seu navegador não suporta a reprodução de vídeo.
-
-  </video>
-
-</div>
-
-
-      <!-- BOTÃO -->
-
-      <div class="hero-cta">
-
-        <a href="#oferta" class="primary-button">
-          QUERO COMEÇAR A APRENDER LIBRAS
-        </a>
-
-      </div>
-
-
-      <!-- GARANTIA E ACESSO -->
-
-      <div class="trust-row">
-
-        <div class="trust-item">
-
-          <div class="trust-seal">
-            ✓
-          </div>
-
-          <span>
-            Garantia de 7 dias
-          </span>
-
-        </div>
-
-
-        <div class="trust-item">
-
-          <span class="download-icon">
-            ↓
-          </span>
-
-          <span>
-            Acesso imediato
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-    <!-- =========================
-     O QUE VOCÊ VAI RECEBER
-========================= -->
-
-<section class="content-section" id="conteudo">
-
-  <div class="container">
-
-    <div class="section-header">
-      <h2>O QUE VOCÊ VAI APRENDER EM LIBRAS</h2>
-    </div>
-
-    <div class="categories">
-
-      <div class="category">
-        <div class="category-icon">Aa</div>
-        <span>Alfabeto</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">◉</div>
-        <span>Cores</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">▣</div>
-        <span>Identificação pessoal</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">♧</div>
-        <span>Família</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">◷</div>
-        <span>Tempo</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">△</div>
-        <span>Formas</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">↔</div>
-        <span>Lateralidade</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">▱</div>
-        <span>Posição e tamanhos</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">☼</div>
-        <span>Estados do tempo</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">☺</div>
-        <span>Atitudes e sentimentos</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">♜</div>
-        <span>Alimentos</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">♨</div>
-        <span>Alimentos salgados</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">♨</div>
-        <span>Alimentos doces</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">♧</div>
-        <span>Animais</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">♢</div>
-        <span>Aves</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">✿</div>
-        <span>Insetos</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">▢</div>
-        <span>Vocabulário do dia a dia</span>
-      </div>
-
-      <div class="category">
-        <div class="category-icon">✦</div>
-        <span>Expressões e situações cotidianas</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-    <!-- =========================
-     CARROSSEL
-========================= -->
-
-<section class="preview-section" id="preview">
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <h2>
-        Veja um pouco do material
-      </h2>
-
-      <p>
-        Conheça visualmente algumas páginas e categorias do guia.
-      </p>
-
-    </div>
-
-
-    <div class="carousel">
-
-      <div class="carousel-track" id="carouselTrack">
-
-        <div class="slide">
-          <img 
-            src="carrossel1.jpeg" 
-            alt="Página do material de Libras - Alfabeto">
-        </div>
-
-        <div class="slide">
-          <img 
-            src="carrossel2.jpeg" 
-            alt="Página do material de Libras - Cores">
-        </div>
-
-        <div class="slide">
-          <img 
-            src="carrossel3.jpeg" 
-            alt="Página do material de Libras - Família">
-        </div>
-
-        <div class="slide">
-          <img 
-            src="carrossel4.jpeg" 
-            alt="Página do material de Libras - Alimentos">
-        </div>
-
-        <div class="slide">
-          <img 
-            src="carrossel5.jpeg" 
-            alt="Página do material de Libras - Sentimentos">
-        </div>
-
-      </div>
-
-
-      <div class="carousel-controls">
-
-        <button
-          class="carousel-button"
-          onclick="moveCarousel(-1)"
-          aria-label="Anterior">
-          ←
-        </button>
-
-        <button
-          class="carousel-button"
-          onclick="moveCarousel(1)"
-          aria-label="Próximo">
-          →
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-    <!-- =========================
-         BENEFÍCIOS
-    ========================== -->
-
-    <section class="benefits-section">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <h2>
-            Feito para quem está começando
-          </h2>
-
-          <p>
-            Um material pensado para facilitar os primeiros passos.
+      <div class="container hero-grid">
+        <div>
+          <div class="badge"><span class="dot"></span> Guia visual para iniciantes</div>
+
+          <h1>
+            Seus primeiros passos em <em>Libras</em>, de um jeito simples.
+          </h1>
+
+          <p class="hero-copy">
+            Um guia visual e organizado para conhecer sinais usados no dia a dia,
+            consultar pelo celular e começar a praticar no seu ritmo.
           </p>
 
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#oferta">QUERO COMEÇAR AGORA →</a>
+            <a class="btn btn-secondary" href="#conteudo">VER O QUE TEM NO GUIA</a>
+          </div>
+
+          <div class="trust">
+            <span>✓ Garantia de 7 dias</span>
+            <span>↓ Acesso digital</span>
+            <span>🔒 Pagamento seguro</span>
+          </div>
         </div>
 
-
-        <div class="benefits">
-
-
-          <div class="benefit">
-
-            <h3>
-              Visual
-            </h3>
-
-            <p>
-              Aprenda observando os sinais e associando cada movimento
-              ao seu significado.
-            </p>
-
-          </div>
-
-
-          <div class="benefit">
-
-            <h3>
-              Organizado
-            </h3>
-
-            <p>
-              Conteúdos separados por categorias para facilitar
-              a consulta e a prática.
-            </p>
-
-          </div>
-
-
-          <div class="benefit">
-
-            <h3>
-              Prático
-            </h3>
-
-            <p>
-              Consulte o material sempre que quiser revisar
-              ou praticar novos sinais.
-            </p>
-
-          </div>
-
-
+        <div class="hero-media">
+          <video controls playsinline preload="metadata" poster="thumb-libras.jpeg">
+            <source src="video-libras.mp4" type="video/mp4">
+            Seu navegador não suporta a reprodução de vídeo.
+          </video>
         </div>
-
       </div>
 
+      <div class="container strip">
+        <div class="strip-inner">
+          <div class="strip-card">
+            <strong>Visual e organizado</strong>
+            <span>Consulte os sinais por categorias.</span>
+          </div>
+          <div class="strip-card">
+            <strong>Feito para iniciantes</strong>
+            <span>Você não precisa saber Libras antes.</span>
+          </div>
+          <div class="strip-card">
+            <strong>Prático para o dia a dia</strong>
+            <span>Estude e revise quando quiser.</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-   <!-- =========================
-     CARD DE OFERTA
-========================= -->
-
-<section class="oferta-section" id="oferta">
-
-  <div class="oferta-card">
-
-    <!-- CABEÇALHO -->
-
-    <div class="oferta-header">
-
-      <div class="oferta-mini">
-        LIBRAS NA PRÁTICA
-      </div>
-
-      <h2>
-        Guia Visual de Libras
-      </h2>
-
-      <p>
-        Tudo o que você precisa para dar os primeiros passos em Libras.
-      </p>
-
-    </div>
-
-
-    <!-- CONTEÚDO -->
-
-    <div class="oferta-body">
-
-      <div class="oferta-incluso">
-
-        <h3>
-          O que você vai receber
-        </h3>
-
-
-        <div class="lista-oferta">
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Guia visual de Libras</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Alfabeto</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Cores</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Identificação pessoal</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Família</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Alimentos</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Animais, aves e insetos</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Sentimentos e atitudes</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Vocabulário do dia a dia</p>
-          </div>
-
-          <div class="item-oferta">
-            <span>✓</span>
-            <p>Diversas outras categorias</p>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- PREÇO -->
-
-      <div class="oferta-preco">
-
-        <div class="preco-antigo">
-          De <span>R$ 40,00</span>
-        </div>
-
-        <div class="preco-legenda">
-          Por apenas
-        </div>
-
-        <div class="preco-atual">
-          <small>R$</small> 10,00
-        </div>
-
-      </div>
-
-
-      <!-- CTA -->
-
-      <a href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995" class="botao-oferta">
-        QUERO MEU GUIA DE LIBRAS
-      </a>
-
-
-      <!-- BENEFÍCIOS -->
-
-      <div class="garantias-oferta">
-
-        <div class="garantia-item">
-
-          <div class="garantia-icone">
-            ✓
-          </div>
-
-          <div>
-            <strong>Garantia de 7 dias</strong>
-            <span>Você compra com segurança</span>
-          </div>
-
-        </div>
-
-
-        <div class="garantia-item">
-
-          <div class="garantia-icone download">
-            ↓
-          </div>
-
-          <div>
-            <strong>Acesso imediato</strong>
-            <span>Receba seu material após a compra</span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="seguranca-oferta">
-        🔒 Pagamento seguro • Acesso digital
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-    <!-- =========================
-         FAQ
-    ========================== -->
-
-    <section class="faq-section" id="faq">
-
+    <section class="content-section" id="conteudo">
       <div class="container">
-
-        <div class="section-header">
-
-          <h2>
-            Perguntas frequentes
-          </h2>
-
+        <div class="section-head">
+          <div class="kicker">Dentro do guia</div>
+          <h2>Um material para você começar sem complicação.</h2>
+          <p>Conteúdos organizados em categorias para facilitar a consulta e a prática.</p>
         </div>
 
-
-        <div class="faq">
-
-
-          <details>
-
-            <summary>
-              Para quem é o Libras na Prática?
-            </summary>
-
-            <p>
-              O material foi pensado principalmente para quem está
-              começando a conhecer Libras e quer aprender sinais
-              de forma visual e organizada.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              Preciso saber Libras antes?
-            </summary>
-
-            <p>
-              Não. O guia foi desenvolvido para iniciantes,
-              então você pode começar mesmo sem conhecimento prévio.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              O material é digital?
-            </summary>
-
-            <p>
-              Sim. O acesso é digital e pode ser consultado
-              pelo celular, computador ou tablet.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              O material ensina somente o alfabeto?
-            </summary>
-
-            <p>
-              Não. Além do alfabeto, o material apresenta diversas
-              categorias de vocabulário e situações do cotidiano.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              Vou ficar fluente em Libras com o material?
-            </summary>
-
-            <p>
-              O Libras na Prática é um material introdutório e visual.
-              Ele foi criado para ajudar nos primeiros passos e na
-              consulta de sinais, não como promessa de fluência.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              Como recebo o acesso?
-            </summary>
-
-            <p>
-              Após a confirmação da compra, o acesso será disponibilizado
-              de forma digital.
-            </p>
-
-          </details>
-
-
+        <div class="topics">
+          <div class="topic"><div class="topic-icon">Aa</div><span>Alfabeto</span></div>
+          <div class="topic"><div class="topic-icon">◉</div><span>Cores</span></div>
+          <div class="topic"><div class="topic-icon">ID</div><span>Identificação pessoal</span></div>
+          <div class="topic"><div class="topic-icon">♡</div><span>Família</span></div>
+          <div class="topic"><div class="topic-icon">◷</div><span>Tempo</span></div>
+          <div class="topic"><div class="topic-icon">△</div><span>Formas</span></div>
+          <div class="topic"><div class="topic-icon">↔</div><span>Lateralidade</span></div>
+          <div class="topic"><div class="topic-icon">▱</div><span>Posição e tamanhos</span></div>
+          <div class="topic"><div class="topic-icon">☼</div><span>Estados do tempo</span></div>
+          <div class="topic"><div class="topic-icon">☺</div><span>Atitudes e sentimentos</span></div>
+          <div class="topic"><div class="topic-icon">✦</div><span>Alimentos</span></div>
+          <div class="topic"><div class="topic-icon">•</div><span>Alimentos salgados</span></div>
+          <div class="topic"><div class="topic-icon">•</div><span>Alimentos doces</span></div>
+          <div class="topic"><div class="topic-icon">♧</div><span>Animais</span></div>
+          <div class="topic"><div class="topic-icon">◇</div><span>Aves</span></div>
+          <div class="topic"><div class="topic-icon">✿</div><span>Insetos</span></div>
+          <div class="topic"><div class="topic-icon">□</div><span>Vocabulário do dia a dia</span></div>
+          <div class="topic"><div class="topic-icon">★</div><span>Expressões e situações cotidianas</span></div>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =========================
-         CTA FINAL
-    ========================== -->
-
-    <section class="final-section">
-
+    <section class="preview" id="preview">
       <div class="container">
+        <div class="section-head">
+          <div class="kicker">Veja por dentro</div>
+          <h2>Conheça algumas páginas do material.</h2>
+          <p>Uma prévia visual para você entender como o guia é organizado.</p>
+        </div>
 
-        <h2>
-          Comece seus primeiros passos em Libras.
-        </h2>
-
-        <p>
-          Tenha um guia visual para consultar, estudar e praticar
-          sinais no seu dia a dia.
-        </p>
-
-
-        <a
-          href="#oferta"
-          class="primary-button final-button">
-          QUERO COMEÇAR AGORA
-        </a>
-
+        <div class="carousel">
+          <div class="slide"><img src="carrossel1.jpeg" alt="Página do material de Libras - Alfabeto"></div>
+          <div class="slide"><img src="carrossel2.jpeg" alt="Página do material de Libras - Cores"></div>
+          <div class="slide"><img src="carrossel3.jpeg" alt="Página do material de Libras - Família"></div>
+          <div class="slide"><img src="carrossel4.jpeg" alt="Página do material de Libras - Alimentos"></div>
+          <div class="slide"><img src="carrossel5.jpeg" alt="Página do material de Libras - Sentimentos"></div>
+        </div>
       </div>
-
     </section>
 
+    <section class="benefits">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Por que usar</div>
+          <h2>Comece de forma leve e prática.</h2>
+          <p>O foco é facilitar seus primeiros passos e deixar a consulta simples.</p>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="benefit">
+            <div class="benefit-number">01</div>
+            <h3>Aprendizado visual</h3>
+            <p>Observe os sinais e associe cada movimento ao seu significado de maneira visual.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-number">02</div>
+            <h3>Conteúdo organizado</h3>
+            <p>As categorias deixam a consulta mais rápida quando você quiser revisar ou encontrar um sinal.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-number">03</div>
+            <h3>Prática no seu ritmo</h3>
+            <p>Consulte o material pelo celular, computador ou tablet e pratique quando quiser.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-section" id="oferta">
+      <div class="container">
+        <div class="offer">
+          <div class="offer-top">
+            <div class="kicker">Libras na Prática</div>
+            <h2>Guia Visual de Libras</h2>
+            <p>Tudo o que você precisa para dar os primeiros passos em Libras.</p>
+          </div>
+
+          <div class="offer-body">
+            <div class="included-title">O que você vai receber</div>
+
+            <div class="included">
+              <div class="included-item"><span class="check">✓</span><span>Guia visual de Libras</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Alfabeto</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Cores</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Identificação pessoal</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Família</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Alimentos</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Animais, aves e insetos</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Sentimentos e atitudes</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Vocabulário do dia a dia</span></div>
+              <div class="included-item"><span class="check">✓</span><span>Diversas outras categorias</span></div>
+            </div>
+
+            <div class="price-wrap">
+              <div class="old">De <span>R$ 40,00</span></div>
+              <div class="from">Por apenas</div>
+              <div class="price"><small>R$</small> 10,00</div>
+            </div>
+
+            <a class="btn btn-primary offer-btn" href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995">
+              QUERO MEU GUIA DE LIBRAS →
+            </a>
+
+            <div class="offer-meta">
+              <div class="meta"><strong>✓ Garantia de 7 dias</strong><span>Compra com segurança</span></div>
+              <div class="meta"><strong>↓ Acesso imediato</strong><span>Após a confirmação da compra</span></div>
+            </div>
+
+            <div class="secure">🔒 Pagamento seguro • Acesso digital</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Dúvidas</div>
+          <h2>Perguntas frequentes.</h2>
+        </div>
+
+        <div class="faq-wrap">
+          <details>
+            <summary>Para quem é o Libras na Prática?</summary>
+            <p>O material foi pensado principalmente para quem está começando a conhecer Libras e quer aprender sinais de forma visual e organizada.</p>
+          </details>
+          <details>
+            <summary>Preciso saber Libras antes?</summary>
+            <p>Não. O guia foi desenvolvido para iniciantes, então você pode começar mesmo sem conhecimento prévio.</p>
+          </details>
+          <details>
+            <summary>O material é digital?</summary>
+            <p>Sim. O acesso é digital e pode ser consultado pelo celular, computador ou tablet.</p>
+          </details>
+          <details>
+            <summary>O material ensina somente o alfabeto?</summary>
+            <p>Não. Além do alfabeto, o material apresenta diversas categorias de vocabulário e situações do cotidiano.</p>
+          </details>
+          <details>
+            <summary>Vou ficar fluente em Libras com o material?</summary>
+            <p>O Libras na Prática é um material introdutório e visual. Ele foi criado para ajudar nos primeiros passos e na consulta de sinais, não como promessa de fluência.</p>
+          </details>
+          <details>
+            <summary>Como recebo o acesso?</summary>
+            <p>Após a confirmação da compra, o acesso será disponibilizado de forma digital.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container">
+        <h2>Comece seus primeiros passos em Libras.</h2>
+        <p>Tenha um guia visual para consultar, estudar e praticar sinais no seu dia a dia.</p>
+        <a class="btn btn-primary" href="#oferta">QUERO COMEÇAR AGORA →</a>
+      </div>
+    </section>
   </main>
 
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-    © 2026 Libras na Prática. Todos os direitos reservados.
-
-  </footer>
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
-  <script>
-
-    const track = document.getElementById("carouselTrack");
-
-    function moveCarousel(direction) {
-
-      const amount = 350;
-
-      track.scrollBy({
-        left: direction * amount,
-        behavior: "smooth"
-      });
-
-    }
-
-  </script>
-
-
+  <footer>© 2026 Libras na Prática. Todos os direitos reservados.</footer>
 </body>
 </html>
