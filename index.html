@@ -1,508 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libras na Prática</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            min-height: 100%;
-        }
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: #ffffff;
-
-            font-family: Arial, sans-serif;
-
-            position: relative;
-            overflow-x: hidden;
-            overflow-y: auto;
-
-            padding: 20px;
-        }
-
-        /* =========================
-           ANIMAÇÕES AZUIS DO FUNDO
-           ========================= */
-
-        body::before,
-        body::after {
-            content: "";
-            position: fixed;
-
-            width: 500px;
-            height: 500px;
-
-            border-radius: 50%;
-
-            background: #0066ff;
-            opacity: 0.13;
-
-            filter: blur(90px);
-
-            pointer-events: none;
-
-            z-index: 0;
-
-            animation: moverFundo 8s ease-in-out infinite alternate;
-        }
-
-        body::before {
-            top: -220px;
-            left: -180px;
-        }
-
-        body::after {
-            bottom: -220px;
-            right: -180px;
-
-            animation-delay: -4s;
-        }
-
-        @keyframes moverFundo {
-
-            0% {
-                transform: translate(0, 0) scale(0.9);
-            }
-
-            50% {
-                transform: translate(100px, 80px) scale(1.2);
-            }
-
-            100% {
-                transform: translate(-30px, 130px) scale(1);
-            }
-        }
-
-        /* Bolhas azuis */
-
-        .container::before,
-        .container::after {
-            content: "";
-
-            position: fixed;
-
-            border-radius: 50%;
-
-            background: #0066ff;
-
-            opacity: 0.08;
-
-            filter: blur(40px);
-
-            pointer-events: none;
-
-            z-index: -1;
-        }
-
-        .container::before {
-            width: 180px;
-            height: 180px;
-
-            top: 15%;
-            right: 8%;
-
-            animation: bolha1 6s ease-in-out infinite alternate;
-        }
-
-        .container::after {
-            width: 140px;
-            height: 140px;
-
-            bottom: 12%;
-            left: 8%;
-
-            animation: bolha2 7s ease-in-out infinite alternate;
-        }
-
-        @keyframes bolha1 {
-
-            from {
-                transform: translate(0, 0);
-            }
-
-            to {
-                transform: translate(-70px, 90px);
-            }
-        }
-
-        @keyframes bolha2 {
-
-            from {
-                transform: translate(0, 0);
-            }
-
-            to {
-                transform: translate(80px, -70px);
-            }
-        }
-
-        /* =========================
-           CONTAINER CENTRAL
-           ========================= */
-
-        .container {
-            width: 100%;
-            max-width: 430px;
-
-            text-align: center;
-
-            position: relative;
-
-            z-index: 2;
-
-            /* Mantém todo o conjunto centralizado */
-            margin: auto;
-        }
-
-        /* =========================
-           IMAGEM
-           ========================= */
-
-        .imagem {
-            width: 300px;
-            height: 300px;
-
-            max-width: 100%;
-
-            object-fit: cover;
-
-            border: 5px solid #0066ff;
-            border-radius: 20px;
-
-            display: block;
-
-            margin: 0 auto 22px;
-        }
-
-        /* =========================
-           BOTÃO
-           ========================= */
-
-        .botao {
-            width: 100%;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 7px;
-
-            padding: 14px 10px;
-
-            background: #0066ff;
-
-            color: #ffffff;
-
-            text-decoration: none;
-
-            font-size: 16px;
-
-            font-weight: bold;
-
-            white-space: nowrap;
-
-            border-radius: 8px;
-
-            transition: all 0.2s ease;
-
-            box-shadow:
-                0 8px 25px rgba(0, 102, 255, 0.25);
-        }
-
-        .botao:hover {
-            background: #0052cc;
-
-            transform: scale(1.02);
-        }
-
-        /* =========================
-           ONLINE
-           ========================= */
-
-        .online {
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 5px;
-        }
-
-        .bolinha-online {
-            width: 9px;
-            height: 9px;
-
-            flex-shrink: 0;
-
-            background: #22c55e;
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 0 0 0 rgba(34, 197, 94, 0.8);
-
-            animation: pulsarOnline 1.4s infinite;
-        }
-
-        @keyframes pulsarOnline {
-
-            0% {
-                box-shadow:
-                    0 0 0 0 rgba(34, 197, 94, 0.8);
-            }
-
-            70% {
-                box-shadow:
-                    0 0 0 7px rgba(34, 197, 94, 0);
-            }
-
-            100% {
-                box-shadow:
-                    0 0 0 0 rgba(34, 197, 94, 0);
-            }
-        }
-
-        /* =========================
-           PROMOÇÃO
-           ========================= */
-
-        .promocao {
-            width: 100%;
-
-            margin-top: 12px;
-
-            padding: 11px 12px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 8px;
-
-            background: #e60000;
-
-            color: #ffffff;
-
-            border-radius: 7px;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            white-space: nowrap;
-
-            box-shadow:
-                0 0 0 0 rgba(230, 0, 0, 0.7);
-
-            animation: pulsarPromocao 1.8s infinite;
-        }
-
-        @keyframes pulsarPromocao {
-
-            0% {
-                box-shadow:
-                    0 0 0 0 rgba(230, 0, 0, 0.65);
-            }
-
-            70% {
-                box-shadow:
-                    0 0 0 9px rgba(230, 0, 0, 0);
-            }
-
-            100% {
-                box-shadow:
-                    0 0 0 0 rgba(230, 0, 0, 0);
-            }
-        }
-
-        .timer {
-            flex-shrink: 0;
-
-            color: #ffffff;
-
-            font-size: 15px;
-
-            font-weight: 900;
-
-            letter-spacing: 0.5px;
-        }
-
-        /* =========================
-           TELAS PEQUENAS
-           ========================= */
-
-        @media (max-width: 420px) {
-
-            body {
-                padding: 15px;
-            }
-
-            .imagem {
-                width: 270px;
-                height: 270px;
-
-                margin-bottom: 20px;
-            }
-
-            .botao {
-                font-size: 14px;
-
-                padding: 13px 7px;
-
-                gap: 5px;
-            }
-
-            .promocao {
-                font-size: 10.5px;
-
-                padding: 10px 7px;
-
-                gap: 5px;
-            }
-
-            .timer {
-                font-size: 13px;
-            }
-        }
-
-        /* =========================
-           CELULARES MUITO PEQUENOS
-           ========================= */
-
-        @media (max-height: 650px) {
-
-            body {
-                align-items: flex-start;
-
-                padding-top: 25px;
-                padding-bottom: 25px;
-            }
-
-            .imagem {
-                width: 240px;
-                height: 240px;
-
-                margin-bottom: 15px;
-            }
-
-            .botao {
-                padding: 11px 6px;
-
-                font-size: 13px;
-            }
-
-            .promocao {
-                margin-top: 9px;
-
-                padding: 9px 6px;
-
-                font-size: 9.5px;
-            }
-
-            .timer {
-                font-size: 12px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libras na Prática</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html{min-height:100%;scroll-behavior:smooth}
+body{min-height:100vh;background:#f5f8ff;font-family:Arial,sans-serif;color:#0b1f4d;position:relative;overflow-x:hidden;padding:18px 14px 28px}
+body:before,body:after{content:"";position:fixed;width:430px;height:430px;border-radius:50%;background:#1769ff;opacity:.1;filter:blur(90px);pointer-events:none;z-index:0;animation:moverFundo 9s ease-in-out infinite alternate}
+body:before{top:-230px;left:-190px}body:after{bottom:-230px;right:-190px;animation-delay:-4s}
+@keyframes moverFundo{0%{transform:translate(0,0) scale(.9)}50%{transform:translate(70px,55px) scale(1.1)}100%{transform:translate(-20px,90px) scale(1)}}
+.container{width:100%;max-width:430px;margin:0 auto;position:relative;z-index:2;text-align:center}
+.imagem{width:155px;height:155px;max-width:100%;object-fit:cover;border:4px solid #1769ff;border-radius:22px;display:block;margin:4px auto 14px;background:#fff;box-shadow:0 10px 30px rgba(23,105,255,.14)}
+.titulo{font-size:28px;line-height:1.08;font-weight:900;letter-spacing:-.7px;margin:0 auto 8px;max-width:390px}.subtitulo{font-size:16px;line-height:1.35;color:#435273;max-width:360px;margin:0 auto 16px}
+.beneficios{background:#fff;border:1px solid #dce6f8;border-radius:18px;padding:15px 15px 12px;text-align:left;box-shadow:0 10px 28px rgba(18,54,110,.08);margin-bottom:15px}.beneficio{display:flex;align-items:center;gap:10px;font-size:15px;line-height:1.2;font-weight:800;color:#172a55;margin-bottom:11px}.beneficio:last-child{margin-bottom:0}.check{width:27px;height:27px;min-width:27px;border-radius:50%;background:#16bf62;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900}
+.oferta{background:linear-gradient(135deg,#1769ff,#0750d9);border-radius:20px;padding:15px 15px 17px;color:#fff;box-shadow:0 14px 32px rgba(23,105,255,.28);margin-bottom:13px}.oferta-label{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;opacity:.92;margin-bottom:2px}.preco{font-size:42px;line-height:1;font-weight:950;letter-spacing:-1px}.preco small{font-size:17px;font-weight:700;vertical-align:9px}.acesso{font-size:13px;margin-top:6px;opacity:.95}
+.botao{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;padding:17px 12px;background:#16bf62;color:#fff;text-decoration:none;font-size:18px;font-weight:900;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 10px 24px rgba(22,191,98,.28)}.botao:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(22,191,98,.34)}
+.microcopy{font-size:11.5px;color:#66738e;margin-top:9px}.garantia{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:13px;font-size:12px;color:#465574;font-weight:700}.escudo{width:25px;height:25px;border-radius:50%;background:#e7f7ee;color:#0ca957;display:flex;align-items:center;justify-content:center;font-weight:900}.seguranca{margin-top:14px;padding:10px 8px;background:#172033;color:#fff;border-radius:10px;font-size:11px;font-weight:800;letter-spacing:.1px}
+@media(max-width:420px){body{padding:12px 12px 22px}.imagem{width:135px;height:135px;margin-bottom:11px}.titulo{font-size:25px}.subtitulo{font-size:14.5px;margin-bottom:13px}.beneficios{padding:13px 12px 10px}.beneficio{font-size:14px;margin-bottom:9px}.check{width:25px;height:25px;min-width:25px}.preco{font-size:39px}.botao{font-size:17px;padding:16px 8px}}
+@media(max-height:650px){body{padding-top:10px}.imagem{width:115px;height:115px;margin-bottom:8px}.titulo{font-size:23px}.subtitulo{margin-bottom:9px}.beneficios{padding:10px 11px 8px}.beneficio{font-size:13px;margin-bottom:7px}.oferta{padding:11px 12px 13px}.preco{font-size:35px}.botao{padding:14px 8px}.garantia{margin-top:9px}.seguranca{margin-top:9px}}
+</style>
 </head>
-
 <body>
 
-    <div class="container">
-
-        <!-- IMAGEM -->
-        <img
-            src="imagem.jpg"
-            alt="Imagem"
-            class="imagem"
-        >
-
-        <!-- BOTÃO -->
-        <a
-            href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995"
-            class="botao"
-        >
-            ACESSE AGORA -
-
-            <span class="online">
-                <span class="bolinha-online"></span>
-                67 Pessoas Online
-            </span>
-        </a>
-
-        <!-- PROMOÇÃO -->
-        <div class="promocao">
-
-            <span>
-                Quando o cronômetro zerar, A PROMOÇÃO ACABA!
-            </span>
-
-            <span
-                class="timer"
-                id="timer"
-            >
-                00:01:00
-            </span>
-
-        </div>
-
+    <!-- Status online -->
+    <div class="online-card" id="onlineCard" aria-live="polite">
+        <span class="online-dot"></span>
+        <span><strong id="onlineCount">—</strong> pessoas acessando agora</span>
     </div>
 
+    <!-- Aviso de compra -->
+    <div class="social-popup" id="socialPopup" aria-live="polite">
+        <div class="social-icon">✓</div>
+        <div class="social-text">
+            <strong id="socialName">Nova compra</strong>
+            <span id="socialMessage">Libras na Prática foi adquirido agora.</span>
+        </div>
+    </div>
+
+<main class="container">
+<img src="imagem.jpg" alt="Libras na Prática" class="imagem">
+<h1 class="titulo">Aprenda Libras de forma simples, visual e prática</h1>
+<p class="subtitulo">Um guia visual para começar a aprender sinais de Libras e consultar no dia a dia.</p>
+<section class="beneficios">
+<div class="beneficio"><span class="check">✓</span><span>Prontos para imprimir</span></div>
+<div class="beneficio"><span class="check">✓</span><span>Apostila completa de Libras</span></div>
+<div class="beneficio"><span class="check">✓</span><span>Mais de 100 páginas de ilustrações</span></div>
+</section>
+<section class="oferta">
+<div class="oferta-label">Acesso ao Libras na Prática</div>
+<div class="preco"><small>por</small> R$10,00</div>
+<div class="acesso">Acesso imediato após a confirmação do pagamento</div>
+</section>
+<a href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995" class="botao">QUERO COMEÇAR AGORA →</a>
+<div class="microcopy">Você será direcionado para o checkout seguro.</div>
+<div class="garantia"><span class="escudo">✓</span><span>Garantia de 7 dias • Conteúdo digital • Compra segura</span></div>
+<div class="seguranca">🔒 COMPRA SEGURA • ACESSO IMEDIATO • PAGAMENTO ÚNICO</div>
+</main>
     <script>
+        /*
+         * Os pop-ups exibem somente dados fornecidos pelos endpoints abaixo.
+         * Sem integração, ficam ocultos — não inventam pessoas ou compras.
+         */
+        const LIBRAS_CONFIG = {
+            onlineEndpoint: "/api/online-count",
+            salesEndpoint: "/api/recent-sales"
+        };
 
-        let tempo = 60;
+        async function atualizarOnline() {
+            const card = document.getElementById("onlineCard");
+            const count = document.getElementById("onlineCount");
 
-        function atualizarTimer() {
+            try {
+                const response = await fetch(LIBRAS_CONFIG.onlineEndpoint, {
+                    cache: "no-store"
+                });
 
-            const minutos =
-                Math.floor(tempo / 60);
+                if (!response.ok) throw new Error();
 
-            const segundos =
-                tempo % 60;
+                const data = await response.json();
+                const n = Number(data.count);
 
-            const minutosFormatados =
-                String(minutos).padStart(2, "0");
-
-            const segundosFormatados =
-                String(segundos).padStart(2, "0");
-
-            document.getElementById("timer").textContent =
-                `00:${minutosFormatados}:${segundosFormatados}`;
-
-            if (tempo === 0) {
-
-                tempo = 60;
-
-            } else {
-
-                tempo--;
-
+                if (Number.isFinite(n) && n > 0) {
+                    count.textContent = n;
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            } catch {
+                card.style.display = "none";
             }
         }
 
-        atualizarTimer();
+        let vendas = [];
+        let indice = 0;
 
-        setInterval(
-            atualizarTimer,
-            1000
-        );
+        async function carregarVendas() {
+            try {
+                const response = await fetch(LIBRAS_CONFIG.salesEndpoint, {
+                    cache: "no-store"
+                });
 
+                if (!response.ok) throw new Error();
+
+                const data = await response.json();
+
+                if (Array.isArray(data.sales)) {
+                    vendas = data.sales.filter(v =>
+                        v &&
+                        typeof v.name === "string" &&
+                        v.name.trim()
+                    );
+                }
+            } catch {
+                vendas = [];
+            }
+        }
+
+        function mostrarPopup() {
+            if (!vendas.length) return;
+
+            const popup = document.getElementById("socialPopup");
+            const name = document.getElementById("socialName");
+            const message = document.getElementById("socialMessage");
+
+            const venda = vendas[indice % vendas.length];
+            indice++;
+
+            name.textContent = venda.name;
+
+            const minutos = Number(venda.minutesAgo);
+
+            if (Number.isFinite(minutos) && minutos <= 1) {
+                message.textContent = "acabou de comprar o Libras na Prática.";
+            } else if (Number.isFinite(minutos)) {
+                message.textContent =
+                    `comprou o Libras na Prática há ${minutos} min.`;
+            } else {
+                message.textContent = "comprou o Libras na Prática.";
+            }
+
+            popup.classList.remove("hide");
+            popup.classList.add("show");
+
+            setTimeout(() => {
+                popup.classList.remove("show");
+                popup.classList.add("hide");
+            }, 4200);
+        }
+
+        atualizarOnline();
+        setInterval(atualizarOnline, 15000);
+
+        carregarVendas().then(() => {
+            if (vendas.length) {
+                mostrarPopup();
+                setInterval(mostrarPopup, 5000);
+            }
+        });
+
+        /* Mantém a página sempre no topo ao abrir/atualizar. */
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+
+        window.addEventListener("load", () => {
+            window.scrollTo(0, 0);
+        });
     </script>
-
 </body>
 </html>
