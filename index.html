@@ -22,149 +22,65 @@ body:before{top:-230px;left:-190px}body:after{bottom:-230px;right:-190px;animati
 </style>
 </head>
 <body>
-
-    <!-- Status online -->
-    <div class="online-card" id="onlineCard" aria-live="polite">
-        <span class="online-dot"></span>
-        <span><strong id="onlineCount">—</strong> pessoas acessando agora</span>
-    </div>
-
-    <!-- Aviso de compra -->
-    <div class="social-popup" id="socialPopup" aria-live="polite">
-        <div class="social-icon">✓</div>
-        <div class="social-text">
-            <strong id="socialName">Nova compra</strong>
-            <span id="socialMessage">Libras na Prática foi adquirido agora.</span>
+<div class="social-text">
+            <strong id=""></strong>
+            <span id="">Libras na Prática foi adquirido agora.</span>
         </div>
     </div>
 
 <main class="container">
-<img src="imagem.jpg" alt="Libras na Prática" class="imagem">
-<h1 class="titulo">Aprenda Libras de forma simples, visual e prática</h1>
-<p class="subtitulo">Um guia visual para começar a aprender sinais de Libras e consultar no dia a dia.</p>
-<section class="beneficios">
-<div class="beneficio"><span class="check">✓</span><span>Prontos para imprimir</span></div>
-<div class="beneficio"><span class="check">✓</span><span>Apostila completa de Libras</span></div>
-<div class="beneficio"><span class="check">✓</span><span>Mais de 100 páginas de ilustrações</span></div>
-</section>
-<section class="oferta">
-<div class="oferta-label">Acesso ao Libras na Prática</div>
-<div class="preco"><small>por</small> R$10,00</div>
-<div class="acesso">Acesso imediato após a confirmação do pagamento</div>
-</section>
-<a href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995" class="botao">QUERO COMEÇAR AGORA →</a>
-<div class="microcopy">Você será direcionado para o checkout seguro.</div>
-<div class="garantia"><span class="escudo">✓</span><span>Garantia de 7 dias • Conteúdo digital • Compra segura</span></div>
-<div class="seguranca">🔒 COMPRA SEGURA • ACESSO IMEDIATO • PAGAMENTO ÚNICO</div>
-</main>
-    <script>
-        /*
-         * Os pop-ups exibem somente dados fornecidos pelos endpoints abaixo.
-         * Sem integração, ficam ocultos — não inventam pessoas ou compras.
-         */
-        const LIBRAS_CONFIG = {
-            onlineEndpoint: "/api/online-count",
-            salesEndpoint: "/api/recent-sales"
-        };
 
-        async function atualizarOnline() {
-            const card = document.getElementById("onlineCard");
-            const count = document.getElementById("onlineCount");
+        <!-- IMAGEM -->
+        <img
+            src="imagem.jpg"
+            alt="Libras na Prática"
+            class="imagem"
+        >
 
-            try {
-                const response = await fetch(LIBRAS_CONFIG.onlineEndpoint, {
-                    cache: "no-store"
-                });
+        <!-- GANCHO -->
+        <div class="gancho">
+            👋 <strong>Você consegue começar a aprender Libras hoje.</strong>
+        </div>
 
-                if (!response.ok) throw new Error();
+        <h1 class="titulo">
+            Veja como é simples começar.
+        </h1>
 
-                const data = await response.json();
-                const n = Number(data.count);
+        <p class="subtitulo">
+            Conheça o <strong>Libras na Prática</strong> e veja o material completo no próximo passo.
+        </p>
 
-                if (Number.isFinite(n) && n > 0) {
-                    count.textContent = n;
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            } catch {
-                card.style.display = "none";
-            }
-        }
+        <!-- PROVA RÁPIDA DO PRODUTO -->
+        <div class="mini-beneficios">
+            <span>✓ Visual</span>
+            <span>✓ +100 páginas</span>
+            <span>✓ Pronto para imprimir</span>
+        </div>
 
-        let vendas = [];
-        let indice = 0;
+        <div class="preco-ponte">
+            <span>Por apenas</span>
+            <strong>R$10,00</strong>
+        </div>
 
-        async function carregarVendas() {
-            try {
-                const response = await fetch(LIBRAS_CONFIG.salesEndpoint, {
-                    cache: "no-store"
-                });
+        <!-- CTA -->
+        <a
+            href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995"
+            class="botao"
+        >
+            VER O LIBRAS NA PRÁTICA →
+        </a>
 
-                if (!response.ok) throw new Error();
+        <div class="microcopy">
+            No próximo passo você vê todos os detalhes.
+        </div>
 
-                const data = await response.json();
-
-                if (Array.isArray(data.sales)) {
-                    vendas = data.sales.filter(v =>
-                        v &&
-                        typeof v.name === "string" &&
-                        v.name.trim()
-                    );
-                }
-            } catch {
-                vendas = [];
-            }
-        }
-
-        function mostrarPopup() {
-            if (!vendas.length) return;
-
-            const popup = document.getElementById("socialPopup");
-            const name = document.getElementById("socialName");
-            const message = document.getElementById("socialMessage");
-
-            const venda = vendas[indice % vendas.length];
-            indice++;
-
-            name.textContent = venda.name;
-
-            const minutos = Number(venda.minutesAgo);
-
-            if (Number.isFinite(minutos) && minutos <= 1) {
-                message.textContent = "acabou de comprar o Libras na Prática.";
-            } else if (Number.isFinite(minutos)) {
-                message.textContent =
-                    `comprou o Libras na Prática há ${minutos} min.`;
-            } else {
-                message.textContent = "comprou o Libras na Prática.";
-            }
-
-            popup.classList.remove("hide");
-            popup.classList.add("show");
-
-            setTimeout(() => {
-                popup.classList.remove("show");
-                popup.classList.add("hide");
-            }, 4200);
-        }
-
-        atualizarOnline();
-        setInterval(atualizarOnline, 15000);
-
-        carregarVendas().then(() => {
-            if (vendas.length) {
-                mostrarPopup();
-                setInterval(mostrarPopup, 5000);
-            }
-        });
-
-        /* Mantém a página sempre no topo ao abrir/atualizar. */
+    </main>
+        <script>
         if ("scrollRestoration" in history) {
             history.scrollRestoration = "manual";
         }
 
-        window.addEventListener("load", () => {
+        window.addEventListener("load", function () {
             window.scrollTo(0, 0);
         });
     </script>
