@@ -1,51 +1,71 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Libras na Prática | Guia Visual de Libras</title>
-<meta name="description" content="Aprenda os primeiros sinais de Libras de forma simples, visual e prática.">
-<style>
-:root{--navy:#08152f;--blue:#1769ff;--blue2:#4b8dff;--cyan:#20c7f7;--ink:#101828;--muted:#667085;--bg:#f4f7fb;--white:#fff;--green:#18a957;--yellow:#ffd34d;--pink:#ff5c9a;--line:#e6ebf2;--shadow:0 18px 55px rgba(12,35,75,.12);}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}a{text-decoration:none;color:inherit}img,video{max-width:100%;display:block}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
-.top{background:#061127;color:#fff;text-align:center;font-size:12px;font-weight:800;letter-spacing:.08em;padding:9px 12px}.top span{color:#68dcff}
-.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,24,40,.08)}.navin{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:950;font-size:18px;color:var(--navy);display:flex;align-items:center;gap:9px}.brandmark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#fff;font-weight:950;box-shadow:0 8px 22px rgba(23,105,255,.28)}.navcta{background:var(--blue);color:#fff;padding:11px 16px;border-radius:12px;font-size:12px;font-weight:900;box-shadow:0 8px 20px rgba(23,105,255,.22)}
-.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 15%,rgba(32,199,247,.3),transparent 28%),radial-gradient(circle at 15% 75%,rgba(75,141,255,.24),transparent 25%),linear-gradient(135deg,#071532 0%,#0b2d6d 54%,#1264d9 100%);color:#fff;padding:58px 0 72px}.hero:before{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(255,255,255,.11);border-radius:50%;right:-170px;top:-170px}.hero:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(255,255,255,.1);border-radius:50%;left:-180px;bottom:-180px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center;position:relative;z-index:2}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.04em}.dot{width:8px;height:8px;background:#55e6a5;border-radius:50%;box-shadow:0 0 0 5px rgba(85,230,165,.14)}h1{font-size:clamp(40px,5vw,66px);line-height:.98;letter-spacing:-.045em;margin:18px 0 18px;font-weight:950;max-width:680px}.hero p{font-size:18px;line-height:1.6;color:#dce9ff;max-width:600px;margin:0 0 25px}.buttons{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:15px 20px;border-radius:14px;font-size:13px;font-weight:950;letter-spacing:.01em}.primary{background:#fff;color:#0b49bd;box-shadow:0 14px 32px rgba(0,0,0,.18)}.secondary{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff}.trust{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;font-size:12px;color:#dce9ff;font-weight:800}.video-card{background:#fff;padding:10px;border-radius:25px;box-shadow:0 28px 70px rgba(0,0,0,.28);transform:rotate(1deg)}.video-card video{border-radius:18px;width:100%;aspect-ratio:16/10;background:#08152f;object-fit:cover}.video-label{color:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:12px 8px 4px;font-weight:900;font-size:12px}.video-label small{color:var(--blue);font-weight:900}
-.stats{margin-top:-30px;position:relative;z-index:5}.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:#fff;border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);border:1px solid #edf1f7}.stat b{display:block;font-size:15px}.stat span{font-size:12px;color:var(--muted)}
-.section{padding:52px 0}.section.alt{background:#fff}.kicker{color:var(--blue);font-weight:950;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.title{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.035em;margin:9px 0 12px;font-weight:950}.subtitle{color:var(--muted);max-width:650px;margin:0;font-size:16px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}
-.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.topic{min-height:86px;border-radius:18px;padding:15px;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 12px 28px rgba(12,35,75,.1)}.topic:nth-child(4n+1){background:linear-gradient(135deg,#1257d8,#208cf4)}.topic:nth-child(4n+2){background:linear-gradient(135deg,#113a91,#1769ff)}.topic:nth-child(4n+3){background:linear-gradient(135deg,#087b9d,#16b8dc)}.topic:nth-child(4n){background:linear-gradient(135deg,#5c2bd9,#8c51f4)}.topic:before{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.11);right:-25px;top:-25px}.topic strong{font-size:15px;position:relative;z-index:1}.topic small{font-size:11px;opacity:.8;margin-top:4px;position:relative;z-index:1}
-.showcase{background:linear-gradient(135deg,#eaf3ff,#f8fbff);border:1px solid #dbe8fb;border-radius:30px;padding:28px}.shots{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px}.shot{background:#fff;padding:8px;border-radius:18px;box-shadow:0 10px 28px rgba(12,35,75,.1);overflow:hidden}.shot img{width:100%;height:270px;object-fit:cover;border-radius:12px}.shot:first-child{grid-row:span 2}.shot:first-child img{height:554px}.caption{padding:11px 4px 4px;font-weight:900;font-size:12px}
-.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.benefit{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 10px 28px rgba(12,35,75,.06)}.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#eaf2ff;color:var(--blue);font-size:21px;margin-bottom:16px}.benefit h3{margin:0 0 7px;font-size:17px}.benefit p{margin:0;color:var(--muted);font-size:14px}
-.offer-section{background:linear-gradient(135deg,#07152f,#0b2f73 60%,#1769ff);color:#fff;position:relative;overflow:hidden}.offer-section:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid rgba(255,255,255,.1);right:-260px;top:-160px}.offer-grid{display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center;position:relative;z-index:2}.offer-copy .kicker{color:#65dcff}.offer-copy .title{color:#fff}.offer-copy .subtitle{color:#c9dcff}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:25px 0}.check{font-size:13px;font-weight:750;color:#eaf2ff}.check:before{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#1ec777;color:#fff;margin-right:8px;font-size:11px;font-weight:950}.price-card{background:#fff;color:var(--ink);border-radius:28px;padding:30px;box-shadow:0 30px 70px rgba(0,0,0,.25);position:relative}.badge{position:absolute;right:18px;top:18px;background:var(--yellow);color:#4d3b00;padding:7px 10px;border-radius:999px;font-size:10px;font-weight:950}.price-card h3{font-size:20px;margin:0 0 6px}.old{color:#98a2b3;text-decoration:line-through;font-size:13px;margin-top:22px}.price{font-size:64px;line-height:1;font-weight:950;letter-spacing:-.06em;color:#0b49bd;margin:2px 0 18px}.price small{font-size:15px;letter-spacing:0;color:#667085}.price-btn{width:100%;background:linear-gradient(135deg,#0d63ff,#1594ff);color:#fff;box-shadow:0 14px 28px rgba(23,105,255,.25)}.secure{display:flex;justify-content:center;gap:12px;color:#667085;font-size:10px;font-weight:800;margin-top:14px}
-.faq{max-width:850px;margin:auto}.faq details{background:#fff;border:1px solid var(--line);border-radius:15px;margin-bottom:10px;padding:0 18px}.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:900;font-size:14px}.faq summary::-webkit-details-marker{display:none}.faq p{color:var(--muted);font-size:13px;padding:0 0 18px;margin:0}
-.final{background:#fff;padding:70px 0 110px;text-align:center}.finalbox{background:linear-gradient(135deg,#0a2c70,#1769ff);color:#fff;border-radius:30px;padding:48px 25px;position:relative;overflow:hidden}.finalbox:before,.finalbox:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.15);border-radius:50%}.finalbox:before{width:300px;height:300px;left:-150px;top:-190px}.finalbox:after{width:220px;height:220px;right:-100px;bottom:-150px}.finalbox>*{position:relative;z-index:2}.finalbox .title{margin-top:8px}.finalbox p{color:#dbe8ff;max-width:580px;margin:0 auto 23px}.footer{background:#061127;color:#91a4c6;text-align:center;font-size:11px;padding:24px}.mobilebar{display:none}
-@media(max-width:850px){.hero-grid,.offer-grid{grid-template-columns:1fr}.hero{padding-top:40px}.video-card{max-width:620px;margin:0 auto}.topic-grid{grid-template-columns:repeat(2,1fr)}.shots{grid-template-columns:1fr 1fr}.shot:first-child{grid-column:1/-1;grid-row:auto}.shot:first-child img{height:340px}.shot img{height:210px}.offer-grid{gap:28px}.section{padding:42px 0}.mobilebar{display:flex;position:fixed;z-index:80;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #dfe6f0;padding:9px 12px;gap:10px;box-shadow:0 -8px 25px rgba(0,0,0,.1)}.mobilebar .mini-price{font-size:11px;font-weight:900;line-height:1.1;flex:1}.mobilebar .mini-price b{display:block;font-size:18px;color:#0b49bd}.mobilebar a{background:#1769ff;color:#fff;border-radius:11px;padding:11px 15px;font-size:11px;font-weight:950;display:flex;align-items:center}}
-@media(max-width:560px){.wrap{width:min(100% - 22px,1120px)}.navin{height:60px}.brand{font-size:15px}.navcta{padding:9px 11px}.hero{padding:32px 0 55px}h1{font-size:42px}.hero p{font-size:15px}.buttons{display:grid}.btn{width:100%}.statgrid{grid-template-columns:1fr}.stats{margin-top:-20px}.section-head{display:block}.section-head .subtitle{margin-top:8px}.topic-grid,.benefit-grid{grid-template-columns:1fr 1fr}.topic{min-height:78px;padding:13px}.showcase{padding:15px;border-radius:22px}.shots{gap:8px}.shot{padding:6px;border-radius:13px}.shot:first-child img{height:250px}.shot img{height:170px}.caption{font-size:10px}.checklist{grid-template-columns:1fr}.price-card{padding:23px}.price{font-size:55px}.faq summary{font-size:13px}.final{padding-bottom:100px}.finalbox{padding:38px 18px;border-radius:23px}}
-</style>
-  <script>
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessar</title>
 
-  window.addEventListener("load", function () {
-    window.scrollTo(0, 0);
-  });
-</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .imagem {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 5px solid #0066ff;
+            border-radius: 20px;
+            display: block;
+            margin: 0 auto 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 14px 35px;
+            background: #0066ff;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .botao:hover {
+            background: #0052cc;
+            transform: scale(1.03);
+        }
+    </style>
 </head>
+
 <body>
-<div class="top">GUIA VISUAL DE LIBRAS <span>• OFERTA ESPECIAL • ACESSO DIGITAL IMEDIATO</span></div>
-<header class="nav"><div class="wrap navin"><a class="brand" href="#top"><span class="brandmark">L</span>Libras na Prática</a><a class="navcta" href="#oferta">QUERO O GUIA</a></div></header>
-<main id="top">
-<section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow"><i class="dot"></i> FEITO PARA QUEM ESTÁ COMEÇANDO</span><h1>Seus primeiros passos em Libras, de um jeito <span style="color:#63ddff">simples.</span></h1><p>Um guia visual para começar a conhecer Libras.</p><div class="buttons"><a class="btn primary" href="#oferta">QUERO COMEÇAR AGORA →</a></div><div class="trust"><span>✓ Garantia de 7 dias</span><span>✓ Acesso imediato</span></div></div><div class="video-card"><video controls playsinline preload="metadata" poster="thumb-libras.jpeg"><source src="video-libras.mp4" type="video/mp4">Seu navegador não suporta vídeo.</video><div class="video-label"><span>Veja um pouco do material</span></div></div></div></section>
-<section class="stats"><div class="wrap statgrid"><div class="stat"><b>📖 Visual e organizado</b><span>Conteúdo por categorias.</span></div><div class="stat"><b>🌱 Para iniciantes</b><span>Feito para iniciantes.</span></div><div class="stat"><b>📱 No seu ritmo</b><span>Consulte quando quiser.</span></div></div></section>
-<section class="section" id="material"><div class="wrap"><div class="section-head"><div><div class="kicker">O que você vai encontrar</div><h2 class="title">Tudo organizado em um só guia.</h2></div></div><div class="topic-grid"><div class="topic"><strong>Alfabeto</strong></div><div class="topic"><strong>Cores</strong></div><div class="topic"><strong>Identificação pessoal</strong></div><div class="topic"><strong>Família</strong></div><div class="topic"><strong>Tempo</strong></div><div class="topic"><strong>Formas</strong></div><div class="topic"><strong>Lateralidade</strong></div><div class="topic"><strong>Posição e tamanhos</strong></div><div class="topic"><strong>Estados do tempo</strong></div><div class="topic"><strong>Atitudes e sentimentos</strong></div><div class="topic"><strong>Alimentos</strong></div><div class="topic"><strong>Alimentos salgados</strong></div><div class="topic"><strong>Alimentos doces</strong></div><div class="topic"><strong>Animais</strong></div><div class="topic"><strong>Aves e insetos</strong></div><div class="topic"><strong>Expressões e situações</strong></div></div></div></section>
-<section class="section alt"><div class="wrap"><div class="section-head"><div><div class="kicker">Por dentro do material</div><h2 class="title">Veja o material por dentro.</h2></div></div><div class="showcase"><div class="shots"><div class="shot"><img src="carrossel1.jpeg" alt="Prévia do material de Libras - Alfabeto"><div class="caption">Alfabeto</div></div><div class="shot"><img src="carrossel2.jpeg" alt="Prévia do material de Libras - Cores"><div class="caption">Cores</div></div><div class="shot"><img src="carrossel3.jpeg" alt="Prévia do material de Libras - Família"><div class="caption">Família</div></div><div class="shot"><img src="carrossel4.jpeg" alt="Prévia do material de Libras - Alimentos"><div class="caption">Alimentos</div></div><div class="shot"><img src="carrossel5.jpeg" alt="Prévia do material de Libras - Sentimentos"><div class="caption">Sentimentos</div></div></div></div></div></section>
-<section class="section"><div class="wrap"><div class="section-head"><div><div class="kicker">Por que é prático?</div><h2 class="title">Simples de consultar.</h2></div></div><div class="benefit-grid"><div class="benefit"><div class="icon">👀</div><h3>Aprendizado visual</h3><p>Referências visuais para começar.</p></div><div class="benefit"><div class="icon">🧩</div><h3>Conteúdo organizado</h3><p>Categorias organizadas para facilitar a consulta.</p></div><div class="benefit"><div class="icon">📲</div><h3>Prática no seu ritmo</h3><p>Consulte pelo celular quando quiser.</p></div></div></div></section>
-<section class="section offer-section" id="oferta"><div class="wrap offer-grid"><div class="offer-copy"><div class="kicker">Acesso ao guia</div><h2 class="title">Seu guia de Libras por R$10.</h2><p class="subtitle">Visual, simples e feito para iniciantes.</p><div class="checklist"><div class="check">Guia visual de Libras</div><div class="check">Alfabeto e cores</div><div class="check">Família e cotidiano</div><div class="check">Alimentos e animais</div><div class="check">Sentimentos e expressões</div><div class="check">E muito mais</div></div></div><div class="price-card"><div class="badge">OFERTA ESPECIAL</div><h3>Guia Visual de Libras</h3><div class="old">De R$ 40,00</div><div style="font-size:12px;color:#667085;font-weight:800">Por apenas</div><div class="price">R$ 10</div><a class="btn price-btn" href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995">QUERO MEU GUIA DE LIBRAS →</a><div class="secure"><span>🔒 Pagamento seguro</span><span>⚡ Acesso digital</span></div><div style="text-align:center;margin-top:15px;font-size:11px;color:#667085;font-weight:800">Garantia de 7 dias</div></div></div></section>
-<section class="section"><div class="wrap faq"><div class="section-head"><div><div class="kicker">Dúvidas</div><h2 class="title">Perguntas frequentes</h2></div></div><details><summary>Para quem é o Libras na Prática?</summary><p>É indicado para iniciantes que querem dar os primeiros passos em Libras, conhecer sinais e ter um material visual para consultar.</p></details><details><summary>Preciso saber Libras antes?</summary><p>Não. O material foi pensado para quem está começando e quer conhecer sinais de forma simples e visual.</p></details><details><summary>O material é digital?</summary><p>Sim. O acesso é digital, permitindo consultar o conteúdo pelo celular ou outro dispositivo compatível.</p></details><details><summary>O material ensina somente o alfabeto?</summary><p>Não. O guia reúne diversas categorias, incluindo cores, família, alimentos, animais, sentimentos, expressões e outras.</p></details><details><summary>Vou ficar fluente em Libras com o material?</summary><p>O material é introdutório e visual, pensado para primeiros passos e prática, não como promessa de fluência.</p></details><details><summary>Como recebo o acesso?</summary><p>Após a confirmação do pagamento, o acesso é disponibilizado digitalmente.</p></details></div></section>
-<section class="final"><div class="wrap"><div class="finalbox"><div class="kicker" style="color:#67ddff">SEU PRIMEIRO PASSO COMEÇA AQUI</div><h2 class="title">Conheça o Libras na Prática.</h2><p>Comece seus primeiros passos em Libras.</p><a class="btn primary" href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995">QUERO COMEÇAR AGORA →</a></div></div></section>
-</main>
-<div class="mobilebar"><div class="mini-price">Libras na Prática<b>R$ 10,00</b></div><a href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995">QUERO O GUIA →</a></div>
-<footer class="footer">© 2026 Libras na Prática • Guia Visual de Libras</footer>
+
+    <div class="container">
+
+        <!-- Troque "imagem.jpg" pelo nome da sua imagem -->
+        <img src="imagem.jpg" alt="Imagem" class="imagem">
+
+        <a href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995" class="botao">Acessar agora</a>
+
+    </div>
+
 </body>
 </html>
+```
