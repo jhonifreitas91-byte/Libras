@@ -12,15 +12,25 @@
             box-sizing: border-box;
         }
 
+        html {
+            min-height: 100%;
+        }
+
         body {
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+
             background: #ffffff;
+
             font-family: Arial, sans-serif;
-            overflow: hidden;
+
             position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            padding: 20px;
         }
 
         /* =========================
@@ -30,15 +40,23 @@
         body::before,
         body::after {
             content: "";
-            position: absolute;
+            position: fixed;
+
             width: 500px;
             height: 500px;
+
             border-radius: 50%;
+
             background: #0066ff;
             opacity: 0.13;
+
             filter: blur(90px);
-            animation: moverFundo 8s ease-in-out infinite alternate;
+
             pointer-events: none;
+
+            z-index: 0;
+
+            animation: moverFundo 8s ease-in-out infinite alternate;
         }
 
         body::before {
@@ -49,10 +67,12 @@
         body::after {
             bottom: -220px;
             right: -180px;
+
             animation-delay: -4s;
         }
 
         @keyframes moverFundo {
+
             0% {
                 transform: translate(0, 0) scale(0.9);
             }
@@ -66,35 +86,49 @@
             }
         }
 
-        /* Bolhas azuis adicionais */
+        /* Bolhas azuis */
+
         .container::before,
         .container::after {
             content: "";
+
             position: fixed;
+
             border-radius: 50%;
+
             background: #0066ff;
+
             opacity: 0.08;
-            pointer-events: none;
+
             filter: blur(40px);
+
+            pointer-events: none;
+
+            z-index: -1;
         }
 
         .container::before {
             width: 180px;
             height: 180px;
+
             top: 15%;
             right: 8%;
+
             animation: bolha1 6s ease-in-out infinite alternate;
         }
 
         .container::after {
             width: 140px;
             height: 140px;
+
             bottom: 12%;
             left: 8%;
+
             animation: bolha2 7s ease-in-out infinite alternate;
         }
 
         @keyframes bolha1 {
+
             from {
                 transform: translate(0, 0);
             }
@@ -105,6 +139,7 @@
         }
 
         @keyframes bolha2 {
+
             from {
                 transform: translate(0, 0);
             }
@@ -115,26 +150,40 @@
         }
 
         /* =========================
-           CONTEÚDO
+           CONTAINER CENTRAL
            ========================= */
 
         .container {
             width: 100%;
             max-width: 430px;
-            padding: 20px;
+
             text-align: center;
+
             position: relative;
+
             z-index: 2;
+
+            /* Mantém todo o conjunto centralizado */
+            margin: auto;
         }
+
+        /* =========================
+           IMAGEM
+           ========================= */
 
         .imagem {
             width: 300px;
             height: 300px;
+
             max-width: 100%;
+
             object-fit: cover;
+
             border: 5px solid #0066ff;
             border-radius: 20px;
+
             display: block;
+
             margin: 0 auto 22px;
         }
 
@@ -144,19 +193,26 @@
 
         .botao {
             width: 100%;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             gap: 7px;
 
-            padding: 14px 12px;
+            padding: 14px 10px;
 
             background: #0066ff;
+
             color: #ffffff;
+
             text-decoration: none;
 
             font-size: 16px;
+
             font-weight: bold;
+
             white-space: nowrap;
 
             border-radius: 8px;
@@ -169,22 +225,30 @@
 
         .botao:hover {
             background: #0052cc;
+
             transform: scale(1.02);
         }
 
+        /* =========================
+           ONLINE
+           ========================= */
+
         .online {
             display: inline-flex;
+
             align-items: center;
+
             gap: 5px;
         }
 
-        /* Bolinha verde pulsante */
         .bolinha-online {
             width: 9px;
             height: 9px;
+
             flex-shrink: 0;
 
             background: #22c55e;
+
             border-radius: 50%;
 
             box-shadow:
@@ -194,6 +258,7 @@
         }
 
         @keyframes pulsarOnline {
+
             0% {
                 box-shadow:
                     0 0 0 0 rgba(34, 197, 94, 0.8);
@@ -211,7 +276,7 @@
         }
 
         /* =========================
-           CAIXA DA PROMOÇÃO
+           PROMOÇÃO
            ========================= */
 
         .promocao {
@@ -219,19 +284,24 @@
 
             margin-top: 12px;
 
-            padding: 11px 14px;
+            padding: 11px 12px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            gap: 9px;
+
+            gap: 8px;
 
             background: #e60000;
+
             color: #ffffff;
 
             border-radius: 7px;
 
             font-size: 13px;
+
             font-weight: bold;
 
             white-space: nowrap;
@@ -242,8 +312,8 @@
             animation: pulsarPromocao 1.8s infinite;
         }
 
-        /* Pulsação vermelha ao redor */
         @keyframes pulsarPromocao {
+
             0% {
                 box-shadow:
                     0 0 0 0 rgba(230, 0, 0, 0.65);
@@ -266,40 +336,86 @@
             color: #ffffff;
 
             font-size: 15px;
+
             font-weight: 900;
 
             letter-spacing: 0.5px;
         }
 
         /* =========================
-           CELULAR
+           TELAS PEQUENAS
            ========================= */
 
         @media (max-width: 420px) {
 
-            .container {
+            body {
                 padding: 15px;
             }
 
             .imagem {
                 width: 270px;
                 height: 270px;
+
+                margin-bottom: 20px;
             }
 
             .botao {
                 font-size: 14px;
-                padding: 13px 8px;
+
+                padding: 13px 7px;
+
                 gap: 5px;
             }
 
             .promocao {
-                font-size: 11px;
-                padding: 10px 8px;
-                gap: 6px;
+                font-size: 10.5px;
+
+                padding: 10px 7px;
+
+                gap: 5px;
             }
 
             .timer {
                 font-size: 13px;
+            }
+        }
+
+        /* =========================
+           CELULARES MUITO PEQUENOS
+           ========================= */
+
+        @media (max-height: 650px) {
+
+            body {
+                align-items: flex-start;
+
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+
+            .imagem {
+                width: 240px;
+                height: 240px;
+
+                margin-bottom: 15px;
+            }
+
+            .botao {
+                padding: 11px 6px;
+
+                font-size: 13px;
+            }
+
+            .promocao {
+                margin-top: 9px;
+
+                padding: 9px 6px;
+
+                font-size: 9.5px;
+            }
+
+            .timer {
+                font-size: 12px;
             }
         }
     </style>
@@ -309,8 +425,12 @@
 
     <div class="container">
 
-        <!-- Troque "imagem.jpg" pelo nome da sua imagem -->
-        <img src="imagem.jpg" alt="Imagem" class="imagem">
+        <!-- IMAGEM -->
+        <img
+            src="imagem.jpg"
+            alt="Imagem"
+            class="imagem"
+        >
 
         <!-- BOTÃO -->
         <a
@@ -318,27 +438,42 @@
             class="botao"
         >
             ACESSE AGORA -
+
             <span class="online">
                 <span class="bolinha-online"></span>
                 67 Pessoas Online
             </span>
         </a>
 
-        <!-- PROMOÇÃO + CRONÔMETRO -->
+        <!-- PROMOÇÃO -->
         <div class="promocao">
-            <span>Quando o cronômetro zerar, A PROMOÇÃO ACABA!</span>
-            <span class="timer" id="timer">00:01:00</span>
+
+            <span>
+                Quando o cronômetro zerar, A PROMOÇÃO ACABA!
+            </span>
+
+            <span
+                class="timer"
+                id="timer"
+            >
+                00:01:00
+            </span>
+
         </div>
 
     </div>
 
     <script>
+
         let tempo = 60;
 
         function atualizarTimer() {
 
-            const minutos = Math.floor(tempo / 60);
-            const segundos = tempo % 60;
+            const minutos =
+                Math.floor(tempo / 60);
+
+            const segundos =
+                tempo % 60;
 
             const minutosFormatados =
                 String(minutos).padStart(2, "0");
@@ -350,15 +485,23 @@
                 `00:${minutosFormatados}:${segundosFormatados}`;
 
             if (tempo === 0) {
+
                 tempo = 60;
+
             } else {
+
                 tempo--;
+
             }
         }
 
         atualizarTimer();
 
-        setInterval(atualizarTimer, 1000);
+        setInterval(
+            atualizarTimer,
+            1000
+        );
+
     </script>
 
 </body>
