@@ -23,42 +23,105 @@
             position: relative;
         }
 
-        /* Animações azuis no fundo */
+        /* =========================
+           ANIMAÇÕES AZUIS DO FUNDO
+           ========================= */
+
         body::before,
         body::after {
             content: "";
             position: absolute;
-            width: 450px;
-            height: 450px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
             background: #0066ff;
-            opacity: 0.08;
-            filter: blur(80px);
-            animation: flutuar 7s ease-in-out infinite alternate;
+            opacity: 0.13;
+            filter: blur(90px);
+            animation: moverFundo 8s ease-in-out infinite alternate;
+            pointer-events: none;
         }
 
         body::before {
-            top: -180px;
-            left: -150px;
+            top: -220px;
+            left: -180px;
         }
 
         body::after {
-            bottom: -180px;
-            right: -150px;
-            animation-delay: -3s;
+            bottom: -220px;
+            right: -180px;
+            animation-delay: -4s;
         }
 
-        @keyframes flutuar {
+        @keyframes moverFundo {
             0% {
-                transform: translate(0, 0) scale(1);
+                transform: translate(0, 0) scale(0.9);
+            }
+
+            50% {
+                transform: translate(100px, 80px) scale(1.2);
             }
 
             100% {
-                transform: translate(100px, 70px) scale(1.25);
+                transform: translate(-30px, 130px) scale(1);
             }
         }
 
+        /* Bolhas azuis adicionais */
+        .container::before,
+        .container::after {
+            content: "";
+            position: fixed;
+            border-radius: 50%;
+            background: #0066ff;
+            opacity: 0.08;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .container::before {
+            width: 180px;
+            height: 180px;
+            top: 15%;
+            right: 8%;
+            animation: bolha1 6s ease-in-out infinite alternate;
+        }
+
+        .container::after {
+            width: 140px;
+            height: 140px;
+            bottom: 12%;
+            left: 8%;
+            animation: bolha2 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes bolha1 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-70px, 90px);
+            }
+        }
+
+        @keyframes bolha2 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(80px, -70px);
+            }
+        }
+
+        /* =========================
+           CONTEÚDO
+           ========================= */
+
         .container {
+            width: 100%;
+            max-width: 430px;
+            padding: 20px;
             text-align: center;
             position: relative;
             z-index: 2;
@@ -67,78 +130,177 @@
         .imagem {
             width: 300px;
             height: 300px;
+            max-width: 100%;
             object-fit: cover;
             border: 5px solid #0066ff;
             border-radius: 20px;
             display: block;
-            margin: 0 auto 25px;
+            margin: 0 auto 22px;
         }
 
+        /* =========================
+           BOTÃO
+           ========================= */
+
         .botao {
-            display: inline-block;
-            padding: 18px 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+
+            padding: 14px 12px;
+
             background: #0066ff;
             color: #ffffff;
             text-decoration: none;
-            font-size: 20px;
+
+            font-size: 16px;
             font-weight: bold;
+            white-space: nowrap;
+
             border-radius: 8px;
-            transition: 0.2s;
-            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.25);
+
+            transition: all 0.2s ease;
+
+            box-shadow:
+                0 8px 25px rgba(0, 102, 255, 0.25);
         }
 
         .botao:hover {
             background: #0052cc;
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .online {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
+            gap: 5px;
         }
 
         /* Bolinha verde pulsante */
         .bolinha-online {
-            width: 10px;
-            height: 10px;
+            width: 9px;
+            height: 9px;
+            flex-shrink: 0;
+
             background: #22c55e;
             border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-            animation: pulsar 1.5s infinite;
+
+            box-shadow:
+                0 0 0 0 rgba(34, 197, 94, 0.8);
+
+            animation: pulsarOnline 1.4s infinite;
         }
 
-        @keyframes pulsar {
+        @keyframes pulsarOnline {
             0% {
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+                box-shadow:
+                    0 0 0 0 rgba(34, 197, 94, 0.8);
             }
 
             70% {
-                box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+                box-shadow:
+                    0 0 0 7px rgba(34, 197, 94, 0);
             }
 
             100% {
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+                box-shadow:
+                    0 0 0 0 rgba(34, 197, 94, 0);
             }
         }
 
+        /* =========================
+           CAIXA DA PROMOÇÃO
+           ========================= */
+
         .promocao {
-            margin-top: 14px;
+            width: 100%;
+
+            margin-top: 12px;
+
+            padding: 11px 14px;
+
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 8px;
-            font-size: 15px;
+            justify-content: center;
+            gap: 9px;
+
+            background: #e60000;
+            color: #ffffff;
+
+            border-radius: 7px;
+
+            font-size: 13px;
             font-weight: bold;
-            color: #222222;
+
+            white-space: nowrap;
+
+            box-shadow:
+                0 0 0 0 rgba(230, 0, 0, 0.7);
+
+            animation: pulsarPromocao 1.8s infinite;
+        }
+
+        /* Pulsação vermelha ao redor */
+        @keyframes pulsarPromocao {
+            0% {
+                box-shadow:
+                    0 0 0 0 rgba(230, 0, 0, 0.65);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 9px rgba(230, 0, 0, 0);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0 rgba(230, 0, 0, 0);
+            }
         }
 
         .timer {
-            color: #0066ff;
-            font-size: 16px;
-            font-weight: bold;
-            min-width: 65px;
+            flex-shrink: 0;
+
+            color: #ffffff;
+
+            font-size: 15px;
+            font-weight: 900;
+
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           CELULAR
+           ========================= */
+
+        @media (max-width: 420px) {
+
+            .container {
+                padding: 15px;
+            }
+
+            .imagem {
+                width: 270px;
+                height: 270px;
+            }
+
+            .botao {
+                font-size: 14px;
+                padding: 13px 8px;
+                gap: 5px;
+            }
+
+            .promocao {
+                font-size: 11px;
+                padding: 10px 8px;
+                gap: 6px;
+            }
+
+            .timer {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -150,7 +312,11 @@
         <!-- Troque "imagem.jpg" pelo nome da sua imagem -->
         <img src="imagem.jpg" alt="Imagem" class="imagem">
 
-        <a href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995" class="botao">
+        <!-- BOTÃO -->
+        <a
+            href="https://seguro.pague.click/api/public/shopify?product=1899545811875&store=18995"
+            class="botao"
+        >
             ACESSE AGORA -
             <span class="online">
                 <span class="bolinha-online"></span>
@@ -158,6 +324,7 @@
             </span>
         </a>
 
+        <!-- PROMOÇÃO + CRONÔMETRO -->
         <div class="promocao">
             <span>Quando o cronômetro zerar, a promoção acaba!</span>
             <span class="timer" id="timer">00:01:00</span>
@@ -169,16 +336,20 @@
         let tempo = 60;
 
         function atualizarTimer() {
+
             const minutos = Math.floor(tempo / 60);
             const segundos = tempo % 60;
 
-            const minutosFormatados = String(minutos).padStart(2, "0");
-            const segundosFormatados = String(segundos).padStart(2, "0");
+            const minutosFormatados =
+                String(minutos).padStart(2, "0");
+
+            const segundosFormatados =
+                String(segundos).padStart(2, "0");
 
             document.getElementById("timer").textContent =
                 `00:${minutosFormatados}:${segundosFormatados}`;
 
-            if (tempo <= 0) {
+            if (tempo === 0) {
                 tempo = 60;
             } else {
                 tempo--;
