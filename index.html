@@ -668,19 +668,37 @@
   <footer>© 2026 Libras na Prática. Todos os direitos reservados.</footer>
 
   <script>
-    // Impede o navegador de restaurar a página em uma posição antiga
-    // ao entrar/recarregar o site.
+    // Sempre abrir/recarregar a página no ponto absolutamente inicial.
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
 
-    window.addEventListener("pageshow", function () {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "auto"
-      });
+    function voltarAoTopo() {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+
+    // Executa em diferentes momentos porque alguns navegadores
+    // restauram a posição depois do carregamento inicial.
+    voltarAoTopo();
+
+    window.addEventListener("DOMContentLoaded", voltarAoTopo);
+    window.addEventListener("load", voltarAoTopo);
+    window.addEventListener("pageshow", voltarAoTopo);
+
+    // Garante o topo também após o navegador terminar de renderizar
+    // imagens/vídeo e recalcular o layout.
+    requestAnimationFrame(() => {
+      voltarAoTopo();
+      requestAnimationFrame(voltarAoTopo);
     });
+
+    setTimeout(voltarAoTopo, 100);
+    setTimeout(voltarAoTopo, 500);
   </script>
+
+
+
 </body>
 </html>
