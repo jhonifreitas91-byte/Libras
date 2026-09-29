@@ -666,5 +666,21 @@
   </main>
 
   <footer>© 2026 Libras na Prática. Todos os direitos reservados.</footer>
+
+  <script>
+    // Impede o navegador de restaurar a página em uma posição antiga
+    // ao entrar/recarregar o site.
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.addEventListener("pageshow", function () {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto"
+      });
+    });
+  </script>
 </body>
 </html>
