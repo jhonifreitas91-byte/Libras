@@ -480,22 +480,24 @@
       margin-top:2px
     }
 
-    .material-video{
-  width:min(360px,100%);
-  margin:0 auto;
-  overflow:hidden;
-  border-radius:18px;
-  background:#181817;
-  aspect-ratio:9/16;
-}
+    /* VÍDEO DO MATERIAL EM 9:16 */
 
-.material-video video{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center;
-}
+    .material-video{
+      width:min(360px,100%);
+      margin:0 auto;
+      overflow:hidden;
+      border-radius:18px;
+      background:#181817;
+      aspect-ratio:9/16;
+    }
+
+    .material-video video{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
 
     /* =========================
        BENEFÍCIOS DA LIBRAS
@@ -536,131 +538,6 @@
     .feature p{
       font-size:14px;
       color:#bcb8b4
-    }
-
-    /* =========================
-       CARROSSEL DE DEPOIMENTOS
-    ========================= */
-
-    .carousel-stage{
-      position:relative;
-      display:grid;
-      grid-template-columns:48px minmax(0,1fr) 48px;
-      align-items:center;
-      gap:12px
-    }
-
-    .carousel{
-      min-width:0;
-      display:flex;
-      gap:16px;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      scroll-behavior:smooth;
-      scrollbar-width:none;
-      padding:8px 4px 22px;
-      overscroll-behavior-x:contain;
-      -webkit-overflow-scrolling:touch;
-      cursor:grab;
-      user-select:none
-    }
-
-    .carousel:active{
-      cursor:grabbing
-    }
-
-    .carousel::-webkit-scrollbar{
-      display:none
-    }
-
-    .slider-side{
-      width:48px;
-      height:48px;
-      border-radius:50%;
-      border:1px solid #e5dfda;
-      background:#fff;
-      color:#181817;
-      display:grid;
-      place-items:center;
-      font-size:38px;
-      line-height:1;
-      cursor:pointer;
-      box-shadow:0 8px 22px rgba(35,25,20,.12);
-      transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
-      z-index:3
-    }
-
-    .slider-side:hover{
-      transform:scale(1.06);
-      box-shadow:0 11px 27px rgba(35,25,20,.17);
-      background:var(--soft);
-      color:var(--primary-dark)
-    }
-
-    .slider-side:active{
-      transform:scale(.96)
-    }
-
-    .slider-side:focus-visible{
-      outline:3px solid rgba(239,111,97,.28);
-      outline-offset:3px
-    }
-
-    .slider-side:disabled{
-      opacity:.35;
-      cursor:default;
-      transform:none!important;
-      box-shadow:none
-    }
-
-    .video-review{
-      flex:0 0 100%;
-      min-width:0;
-      scroll-snap-align:start;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:18px;
-      box-shadow:0 12px 32px rgba(35,25,20,.07)
-    }
-
-    .video-review-media{
-      width:100%;
-      overflow:hidden;
-      border-radius:17px;
-      background:#181817;
-      aspect-ratio:9/16
-    }
-
-    .video-review-media video{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center
-    }
-
-    .video-review-info{
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      gap:12px;
-      padding:14px 4px 2px
-    }
-
-    .video-review-info .stars{
-      margin:0;
-      font-size:13px
-    }
-
-    .video-review-info strong{
-      font-size:14px
-    }
-
-    .stars{
-      color:#efb34e;
-      letter-spacing:2px;
-      font-size:14px
     }
 
     /* =========================
@@ -1240,17 +1117,6 @@
         font-size:12px
       }
 
-      .carousel-stage{
-        grid-template-columns:34px minmax(0,1fr) 34px;
-        gap:5px
-      }
-
-      .slider-side{
-        width:34px;
-        height:34px;
-        font-size:28px
-      }
-
       .material-carousel-stage{
         grid-template-columns:34px minmax(0,1fr) 34px;
         gap:6px
@@ -1542,7 +1408,7 @@
             alt="Material ilustrado de Libras"
           >
           <span class="quiz-image-label">
-            Alfabeto 
+            Alfabeto
           </span>
         </button>
 
@@ -1697,10 +1563,6 @@
         O que você recebe
       </a>
 
-      <a href="#depoimentos">
-        Avaliações
-      </a>
-
       <a href="#oferta">
         Oferta
       </a>
@@ -1741,14 +1603,6 @@
           Aprender Libras pode ser muito mais simples quando você tem o conteúdo <em>organizado.</em>
         </h1>
 
-
-        <!--
-          VÍDEO PRINCIPAL DO LIBRAS
-
-          Mantido com os nomes do projeto de Libras:
-          video-libras.mp4
-          thumb-libras.jpeg
-        -->
 
         <div class="hero-video">
 
@@ -1840,7 +1694,6 @@
 
 
       <div class="days">
-
 
         <article class="day">
 
@@ -2112,7 +1965,6 @@
 
       <div class="feature-grid">
 
-
         <article class="feature">
 
           <div class="feature-icon">
@@ -2166,182 +2018,6 @@
 
         </article>
 
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =======================================================
-       DEPOIMENTOS
-  ======================================================== -->
-
-  <section id="depoimentos">
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <div class="kicker">
-          AVALIAÇÕES EM VÍDEO
-        </div>
-
-        <h2>
-          Veja o que nossas clientes estão falando.
-        </h2>
-
-        <p>
-          Assista aos depoimentos em vídeo e conheça a experiência
-          de quem já teve contato com o material.
-        </p>
-
-      </div>
-
-
-      <div class="carousel-stage video-review-stage">
-
-        <button
-          class="slider-side slider-side-left"
-          data-target="videoReviews"
-          data-dir="-1"
-          aria-label="Ver avaliação em vídeo anterior"
-        >
-          ‹
-        </button>
-
-
-        <div
-          class="carousel video-review-carousel"
-          id="videoReviews"
-          tabindex="0"
-        >
-
-
-          <article class="video-review">
-
-            <div class="video-review-media">
-
-              <video
-                controls
-                playsinline
-                preload="metadata"
-                poster="thumbfalada1.jpg"
-              >
-
-                <source
-                  src="videofalado1.mp4"
-                  type="video/mp4"
-                >
-
-                Seu navegador não suporta a reprodução de vídeos.
-
-              </video>
-
-            </div>
-
-            <div class="video-review-info">
-
-              <div class="stars">
-                ★★★★★
-              </div>
-
-              <strong>
-                Alice Santos
-              </strong>
-
-            </div>
-
-          </article>
-
-
-          <article class="video-review">
-
-            <div class="video-review-media">
-
-              <video
-                controls
-                playsinline
-                preload="metadata"
-                poster="thumbfalada2.jpg"
-              >
-
-                <source
-                  src="videofalado2.mp4"
-                  type="video/mp4"
-                >
-
-                Seu navegador não suporta a reprodução de vídeos.
-
-              </video>
-
-            </div>
-
-            <div class="video-review-info">
-
-              <div class="stars">
-                ★★★★★
-              </div>
-
-              <strong>
-                Thayna Cardoso
-              </strong>
-
-            </div>
-
-          </article>
-
-
-          <article class="video-review">
-
-            <div class="video-review-media">
-
-              <video
-                controls
-                playsinline
-                preload="metadata"
-                poster="thumbfalada3.jpg"
-              >
-
-                <source
-                  src="videofalado3.mp4"
-                  type="video/mp4"
-                >
-
-                Seu navegador não suporta a reprodução de vídeos.
-
-              </video>
-
-            </div>
-
-            <div class="video-review-info">
-
-              <div class="stars">
-                ★★★★★
-              </div>
-
-              <strong>
-                Julia Pedroso
-              </strong>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-
-        <button
-          class="slider-side slider-side-right"
-          data-target="videoReviews"
-          data-dir="1"
-          aria-label="Ver próxima avaliação em vídeo"
-        >
-          ›
-        </button>
-
       </div>
 
     </div>
@@ -2376,7 +2052,6 @@
 
 
       <div class="offer-box">
-
 
         <div class="offer-kicker-row">
 
@@ -2463,11 +2138,6 @@
         </div>
 
 
-        <!--
-          TROQUE O HREF ABAIXO PELO LINK DE CHECKOUT
-          DO LIBRAS NA PRÁTICA.
-        -->
-
         <a
           class="btn btn-primary"
           href="https://pay.cakto.com.br/heygsp4_1157628"
@@ -2509,7 +2179,6 @@
 
 
       <div class="faq">
-
 
         <details>
 
@@ -2615,7 +2284,6 @@
 
         </details>
 
-
       </div>
 
     </div>
@@ -2680,14 +2348,16 @@
 
 
 <!-- =========================================================
-     JAVASCRIPT — CARROSSÉIS
+     JAVASCRIPT — CARROSSEL DO MATERIAL
 ========================================================= -->
 
 <script>
 
 function carouselItems(c){
+
   return Array.from(c.children)
     .filter(el => el.offsetWidth > 0);
+
 }
 
 
@@ -2702,205 +2372,53 @@ function carouselIndex(c){
 
   items.forEach((item,i)=>{
 
-    const d = Math.abs(
-      c.scrollLeft - item.offsetLeft
-    );
+    const d =
+      Math.abs(
+        c.scrollLeft - item.offsetLeft
+      );
 
     if(d < dist){
+
       dist = d;
       best = i;
+
     }
 
   });
 
   return best;
-}
-
-
-function updateCarouselButtons(c){
-
-  const items = carouselItems(c);
-  const index = carouselIndex(c);
-
-  if(!items.length) return;
-
-  const left =
-    c.parentElement?.querySelector(
-      '.slider-side-left'
-    );
-
-  const right =
-    c.parentElement?.querySelector(
-      '.slider-side-right'
-    );
-
-  if(left){
-    left.disabled = index <= 0;
-  }
-
-  if(right){
-    right.disabled =
-      index >= items.length - 1;
-  }
 
 }
 
 
 function moveCarousel(c,dir){
 
-  const items = carouselItems(c);
+  const items =
+    carouselItems(c);
 
   if(!items.length) return;
 
-  const index = carouselIndex(c);
+  const index =
+    carouselIndex(c);
 
-  const next = Math.max(
-    0,
-    Math.min(
-      items.length - 1,
-      index + dir
-    )
-  );
+  const next =
+    Math.max(
+      0,
+      Math.min(
+        items.length - 1,
+        index + dir
+      )
+    );
 
-  if(next === index){
-
-    updateCarouselButtons(c);
-
-    return;
-  }
+  if(next === index) return;
 
   c.scrollTo({
     left:items[next].offsetLeft,
     behavior:'smooth'
   });
 
-  setTimeout(
-    ()=>updateCarouselButtons(c),
-    300
-  );
-
 }
 
-
-/* =========================
-   VÍDEOS DOS DEPOIMENTOS
-========================= */
-
-const reviewVideos =
-  Array.from(
-    document.querySelectorAll(
-      '#videoReviews video'
-    )
-  );
-
-
-function resetReviewVideo(video){
-
-  try{
-
-    video.pause();
-
-    video.currentTime = 0;
-
-    video.load();
-
-  }catch(e){}
-
-}
-
-
-reviewVideos.forEach(video=>{
-
-  video.addEventListener(
-    'play',
-    ()=>{
-
-      reviewVideos.forEach(other=>{
-
-        if(other !== video){
-
-          resetReviewVideo(other);
-
-        }
-
-      });
-
-    }
-  );
-
-});
-
-
-const videoReviewsCarousel =
-  document.getElementById(
-    'videoReviews'
-  );
-
-
-if(videoReviewsCarousel){
-
-  let reviewScrollTimer;
-
-  videoReviewsCarousel.addEventListener(
-    'scroll',
-    ()=>{
-
-      clearTimeout(
-        reviewScrollTimer
-      );
-
-      reviewScrollTimer =
-        setTimeout(
-          ()=>{
-            reviewVideos.forEach(
-              resetReviewVideo
-            );
-          },
-          120
-        );
-
-    },
-    {passive:true}
-  );
-
-}
-
-
-/* =========================
-   BOTÕES DOS CARROSSÉIS
-========================= */
-
-document.querySelectorAll(
-  '.slider-side'
-).forEach(btn=>{
-
-  btn.addEventListener(
-    'click',
-    ()=>{
-
-      const target =
-        document.getElementById(
-          btn.dataset.target
-        );
-
-      if(target){
-
-        moveCarousel(
-          target,
-          Number(btn.dataset.dir)
-        );
-
-      }
-
-    }
-  );
-
-});
-
-
-/* =========================
-   CARROSSEL DE MATERIAL
-========================= */
 
 document.querySelectorAll(
   '.material-carousel'
@@ -2977,64 +2495,6 @@ document.querySelectorAll(
 
 });
 
-
-/* =========================
-   NAVEGAÇÃO POR TECLADO
-========================= */
-
-document.querySelectorAll(
-  '.carousel'
-).forEach(carousel=>{
-
-  carousel.style.touchAction =
-    'auto';
-
-
-  carousel.addEventListener(
-    'scroll',
-    ()=>{
-      updateCarouselButtons(
-        carousel
-      );
-    },
-    {passive:true}
-  );
-
-
-  carousel.addEventListener(
-    'keydown',
-    e=>{
-
-      if(
-        e.key === 'ArrowLeft' ||
-        e.key === 'ArrowRight'
-      ){
-
-        e.preventDefault();
-
-        moveCarousel(
-          carousel,
-          e.key === 'ArrowRight'
-            ? 1
-            : -1
-        );
-
-      }
-
-    }
-  );
-
-
-  requestAnimationFrame(
-    ()=>{
-      updateCarouselButtons(
-        carousel
-      );
-    }
-  );
-
-});
-
 </script>
 
 
@@ -3103,8 +2563,6 @@ document.querySelectorAll(
   }
 
 
-  /* RESPOSTAS NORMAIS */
-
   overlay
     .querySelectorAll(
       '.quiz-screen:not([data-screen="6"]) .quiz-option'
@@ -3129,8 +2587,6 @@ document.querySelectorAll(
 
     });
 
-
-  /* RESPOSTAS COM IMAGEM */
 
   overlay
     .querySelectorAll(
@@ -3169,8 +2625,6 @@ document.querySelectorAll(
     });
 
 
-  /* BOTÃO CONTINUAR */
-
   const continueButton =
     overlay.querySelector(
       '.quiz-continue'
@@ -3186,8 +2640,6 @@ document.querySelectorAll(
 
   }
 
-
-  /* FINAL DO QUIZ */
 
   overlay
     .querySelectorAll(
